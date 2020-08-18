@@ -1,7 +1,6 @@
-#include <iostream>
-#include <string>
+
 #include "./Docente.h"
-using namespace std;
+
 
 class DocenteEfetivo : public Docente{
     private:

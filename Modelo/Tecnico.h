@@ -1,7 +1,6 @@
-#include <iostream>
-#include <string>
+
 #include "./Funcionario.h"
-using namespace std;
+
 
 class Tecnico : public Funcionario{
     private:
