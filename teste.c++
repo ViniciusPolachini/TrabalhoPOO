@@ -19,13 +19,18 @@ class Instrumento{//abstrata
 };
 
 class InstrumentoDeCorda : public Instrumento{
-    private:
+    public:
         int Cordas;
     public:
-        InstrumentoDeCorda(string _Marca, string _Nome, float _Preco, int _Cordas):Instrumento(_Marca,_Nome,_Preco){
-            Cordas=_Cordas;
-        }
         ~InstrumentoDeCorda(){}
+        InstrumentoDeCorda(string _Marca, string _Nome, float _Preco, int _Cordas):Instrumento(_Marca,_Nome,_Preco){
+            if(_Cordas>=4){
+                Cordas=_Cordas;
+            }
+            else{
+                InstrumentoDeCorda::~InstrumentoDeCorda();
+            }
+        }
         float Promocao(){
             return Preco-Preco*0.1;
         }
@@ -35,10 +40,7 @@ class InstrumentoDeCorda : public Instrumento{
 };
 
 int main(){
-    unique_ptr<InstrumentoDeCorda> Y(new InstrumentoDeCorda("Legal", "D+", 599.99, 4));
+    unique_ptr<InstrumentoDeCorda> Y(new InstrumentoDeCorda("Legal", "D+", 599.99, 3));
     unique_ptr<InstrumentoDeCorda> Z(new InstrumentoDeCorda("Legal", "D+", 599.99, 4));
-    Y->Relatorio();
     Z->Relatorio();
-    Y->~InstrumentoDeCorda();//Delete
-    
-}
+    }

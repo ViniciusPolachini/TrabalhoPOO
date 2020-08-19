@@ -8,10 +8,9 @@ class Funcionario{
         string codigo, nome, nivel;
         double salario;
     public:
-        Funcionario(string _codigo, string _nome, string _nivel, double _salario){
+        Funcionario(string _codigo, string _nome){
             codigo=_codigo;
             nome=_nome;
-            nivel=_nivel;
         }
-        virtual double calculaSalario()=0;
+        virtual double calculaSalario(double _salario)=0;
 };

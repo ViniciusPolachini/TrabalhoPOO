@@ -12,6 +12,5 @@ class Departamento{
     public:
         Departamento(){}
         Departamento(string _codigo, string _nome){
-            *funcionarios[] = 
         } 
 };
