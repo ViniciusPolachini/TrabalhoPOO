@@ -1,6 +1,5 @@
-
-#include "Funcionario.h"
-
+#pragma once
+#include "./Funcionario.h"
 
 class Docente : public Funcionario{
     protected:
@@ -11,6 +10,7 @@ class Docente : public Funcionario{
         {
             Titulacao=_Titulacao;
         }
-    
-        virtual double calculaSalario(double _salario)=0;
+
+        virtual string getTitulacao()=0;
+        virtual void setTitulacao(string titulo)=0;
 };

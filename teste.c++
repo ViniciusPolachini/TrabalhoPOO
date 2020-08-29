@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <memory>
+#include <vector>
 using namespace std;
 
 class Instrumento{//abstrata
@@ -14,15 +15,18 @@ class Instrumento{//abstrata
             Nome=_Nome;
             Preco=_Preco;
         }
-        virtual float Promocao()=0;
         virtual void Relatorio()=0;
 };
+
 
 class InstrumentoDeCorda : public Instrumento{
     public:
         int Cordas;
     public:
         ~InstrumentoDeCorda(){}
+        InstrumentoDeCorda():Instrumento("oi", "Thcau", 200){
+            Cordas=5;
+        }
         InstrumentoDeCorda(string _Marca, string _Nome, float _Preco, int _Cordas):Instrumento(_Marca,_Nome,_Preco){
             if(_Cordas>=4){
                 Cordas=_Cordas;
@@ -39,8 +43,22 @@ class InstrumentoDeCorda : public Instrumento{
         }
 };
 
+InstrumentoDeCorda** createInstrumentosDeCorda(InstrumentoDeCorda** x){
+    return x;
+}
+
 int main(){
-    unique_ptr<InstrumentoDeCorda> Y(new InstrumentoDeCorda("Legal", "D+", 599.99, 3));
-    unique_ptr<InstrumentoDeCorda> Z(new InstrumentoDeCorda("Legal", "D+", 599.99, 4));
-    Z->Relatorio();
+    InstrumentoDeCorda* x[3];
+    for(int i=0; i<3; i++){
+        x[i] = new InstrumentoDeCorda("Coisa", "DeMais", 5000, i+4);
+    }
+    InstrumentoDeCorda** y= createInstrumentosDeCorda(x);
+    y[1]->Relatorio();
+    
+   // cout<<y[0]<<"\n\n";
+    //y[0]=x;
+    //cout<<typeid(*y[0]).name()<<"\n";
+    //cout<<typeid(*z).name()<<"\n";
+    //if(typeid(*y[0]).name()==typeid(InstrumentoDeCorda).name()) y[0]->Relatorio();
+    
     }
