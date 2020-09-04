@@ -1,13 +1,12 @@
 #pragma once
 #include "../DataBase/DataBase.h"
-#include "../Modelo/DocenteEfetivo.h"
-#include "../Modelo/DocenteSub.h"
-#include "../Modelo/Tecnico.h"
 
 class Universidade{
+
     private:
         string nome;
         DataBase* database;
+        
     public:
         Universidade(string _Nome){
             nome=_Nome;

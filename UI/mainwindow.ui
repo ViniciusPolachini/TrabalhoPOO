@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Universidade</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_7">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="departamentos">
+       <attribute name="title">
+        <string>Departamentos</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_2">
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>196</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Numero de funcionarios</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Gasto com Funcionários</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="funcionarios">
+       <attribute name="title">
+        <string>Funcionários</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_3">
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>196</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Salário</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nível</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Departamento</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tecnicos">
+       <attribute name="title">
+        <string>Técnicos</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_4">
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>196</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Função</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Salário</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nível</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Departamento</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="docentes">
+       <attribute name="title">
+        <string>Docentes</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_7">
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>196</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Titulação</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Salário</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nível</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Departamento</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="docentesEf">
+       <attribute name="title">
+        <string>Docentes Efetivos</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_5">
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>196</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Titulação</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Área</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Salário</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nível</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Departamento</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="docentesSub">
+       <attribute name="title">
+        <string>Docentes Substitutos</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_6">
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>196</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Titulação</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Carga Horária</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Salário</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nível</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Departamento</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArquivo">
+    <property name="title">
+     <string>Arquivo</string>
+    </property>
+    <addaction name="actionSalvar"/>
+    <addaction name="actionAbrir"/>
+   </widget>
+   <widget class="QMenu" name="menuInserir">
+    <property name="title">
+     <string>Inserir</string>
+    </property>
+    <widget class="QMenu" name="menuFuncion_rio">
+     <property name="title">
+      <string>Funcionário</string>
+     </property>
+     <widget class="QMenu" name="menuDocente_2">
+      <property name="title">
+       <string>Docente</string>
+      </property>
+      <addaction name="actionEfetivo_2"/>
+      <addaction name="actionSubstituto_2"/>
+     </widget>
+     <addaction name="actionTecnico"/>
+     <addaction name="menuDocente_2"/>
+    </widget>
+    <addaction name="actionNovo_Departamento"/>
+    <addaction name="menuFuncion_rio"/>
+   </widget>
+   <widget class="QMenu" name="menuExportar_Relat_rio">
+    <property name="title">
+     <string>Exportar Relatório</string>
+    </property>
+    <widget class="QMenu" name="menuDepartamentos">
+     <property name="title">
+      <string>Departamentos</string>
+     </property>
+     <addaction name="actionGeral_2"/>
+     <addaction name="actionGasto_em_faixa_especifica"/>
+    </widget>
+    <widget class="QMenu" name="menuFuncion_rios">
+     <property name="title">
+      <string>Funcionários</string>
+     </property>
+     <widget class="QMenu" name="menuDocentes">
+      <property name="title">
+       <string>Docentes</string>
+      </property>
+      <addaction name="actionGeral_4"/>
+      <addaction name="actionEfetivos"/>
+      <addaction name="actionSubstitutos"/>
+     </widget>
+     <addaction name="actionGeral_3"/>
+     <addaction name="actionSalario_especifico"/>
+     <addaction name="actionTecnicos"/>
+     <addaction name="menuDocentes"/>
+    </widget>
+    <addaction name="actionGeral"/>
+    <addaction name="menuDepartamentos"/>
+    <addaction name="menuFuncion_rios"/>
+   </widget>
+   <widget class="QMenu" name="menuPesquisar">
+    <property name="title">
+     <string>Pesquisar</string>
+    </property>
+    <widget class="QMenu" name="menuFuncion_rio_por_ID">
+     <property name="title">
+      <string>Funcionário</string>
+     </property>
+     <addaction name="actionPor_ID_2"/>
+     <addaction name="actionPor_nome"/>
+    </widget>
+    <widget class="QMenu" name="menuDepartamento_por_ID">
+     <property name="title">
+      <string>Departamento</string>
+     </property>
+     <addaction name="actionPor_ID"/>
+     <addaction name="actionPor_nome_2"/>
+    </widget>
+    <addaction name="menuDepartamento_por_ID"/>
+    <addaction name="menuFuncion_rio_por_ID"/>
+   </widget>
+   <addaction name="menuArquivo"/>
+   <addaction name="menuInserir"/>
+   <addaction name="menuPesquisar"/>
+   <addaction name="menuExportar_Relat_rio"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSalvar">
+   <property name="text">
+    <string>Salvar</string>
+   </property>
+  </action>
+  <action name="actionAbrir">
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionNovo_Departamento">
+   <property name="text">
+    <string>Departamento</string>
+   </property>
+  </action>
+  <action name="actionDocente_Efetivo">
+   <property name="text">
+    <string>Técnico</string>
+   </property>
+  </action>
+  <action name="actionFuncion_rio_2">
+   <property name="text">
+    <string>Departamento (por nome)</string>
+   </property>
+  </action>
+  <action name="actionDocente_Substituto_2">
+   <property name="text">
+    <string>Funcionário (por nome)</string>
+   </property>
+  </action>
+  <action name="actionGeral">
+   <property name="text">
+    <string>Geral</string>
+   </property>
+  </action>
+  <action name="actionT_cnico">
+   <property name="text">
+    <string>Docente Substituto</string>
+   </property>
+  </action>
+  <action name="actionDocente_Substituto_3">
+   <property name="text">
+    <string>Docente Substituto</string>
+   </property>
+  </action>
+  <action name="actionDepartamentos_por_gasto">
+   <property name="text">
+    <string>Departamentos (por gasto)</string>
+   </property>
+  </action>
+  <action name="actionFuncion_rios_por_sal_rio">
+   <property name="text">
+    <string>Funcionários (por salário)</string>
+   </property>
+  </action>
+  <action name="actionT_cnicos">
+   <property name="text">
+    <string>Técnicos</string>
+   </property>
+  </action>
+  <action name="actionDocentes">
+   <property name="text">
+    <string>Docentes</string>
+   </property>
+  </action>
+  <action name="actionDocentes_Efetivos">
+   <property name="text">
+    <string>Docentes Efetivos</string>
+   </property>
+  </action>
+  <action name="actionDocentes_Substitutos">
+   <property name="text">
+    <string>Docentes Substitutos</string>
+   </property>
+  </action>
+  <action name="actionDepartamento_por_ID">
+   <property name="text">
+    <string>Departamento (por ID)</string>
+   </property>
+  </action>
+  <action name="actionDepartamento_por_nome">
+   <property name="text">
+    <string>Departamento (por nome)</string>
+   </property>
+  </action>
+  <action name="actionFuncion_rio_por_ID">
+   <property name="text">
+    <string>Funcionário (por ID)</string>
+   </property>
+  </action>
+  <action name="actionFuncion_rio_por_nome">
+   <property name="text">
+    <string>Funcionário (por nome)</string>
+   </property>
+  </action>
+  <action name="actionPor_ID">
+   <property name="text">
+    <string>Por ID</string>
+   </property>
+  </action>
+  <action name="actionPor_ID_2">
+   <property name="text">
+    <string>Por ID</string>
+   </property>
+  </action>
+  <action name="actionPor_nome">
+   <property name="text">
+    <string>Por nome</string>
+   </property>
+  </action>
+  <action name="actionPor_nome_2">
+   <property name="text">
+    <string>Por nome</string>
+   </property>
+  </action>
+  <action name="actionEfetivo">
+   <property name="text">
+    <string>Efetivo</string>
+   </property>
+  </action>
+  <action name="actionSubstituto">
+   <property name="text">
+    <string>Substituto</string>
+   </property>
+  </action>
+  <action name="actionGeral_2">
+   <property name="text">
+    <string>Geral</string>
+   </property>
+  </action>
+  <action name="actionGasto_em_faixa_especifica">
+   <property name="text">
+    <string>Gasto em faixa especifica</string>
+   </property>
+  </action>
+  <action name="actionGeral_3">
+   <property name="text">
+    <string>Geral</string>
+   </property>
+  </action>
+  <action name="actionSalario_especifico">
+   <property name="text">
+    <string>Salario especifico</string>
+   </property>
+  </action>
+  <action name="actionTecnicos">
+   <property name="text">
+    <string>Tecnicos</string>
+   </property>
+  </action>
+  <action name="actionGeral_4">
+   <property name="text">
+    <string>Geral</string>
+   </property>
+  </action>
+  <action name="actionEfetivos">
+   <property name="text">
+    <string>Efetivos</string>
+   </property>
+  </action>
+  <action name="actionSubstitutos">
+   <property name="text">
+    <string>Substitutos</string>
+   </property>
+  </action>
+  <action name="actionTecnico">
+   <property name="text">
+    <string>Tecnico</string>
+   </property>
+  </action>
+  <action name="actionEfetivo_2">
+   <property name="text">
+    <string>Efetivo</string>
+   </property>
+  </action>
+  <action name="actionSubstituto_2">
+   <property name="text">
+    <string>Substituto</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

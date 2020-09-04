@@ -4,6 +4,7 @@
 #define MAXF MAXD*50
 
 class DataBase{
+    
     private:
         Departamento* departamentos[MAXD];
         Funcionario* funcionarios[MAXF];

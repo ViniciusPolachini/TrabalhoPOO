@@ -1,16 +1,18 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include<memory>
+#include <memory>
 #include "./Funcionario.h"
 #define MAX 50
 
 class Departamento{
+    
     private:
         string codigo, nome;
         static int TotalFuncionarios;
         int NFuncionarios;
         Funcionario* funcionarios[MAX];
+        
     public:
         Departamento(){}
         Departamento(string _nome, string _codigo){
