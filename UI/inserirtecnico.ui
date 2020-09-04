@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>284</width>
+    <height>356</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Novo técnico</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="3" column="0" colspan="2">
+    <widget class="QLineEdit" name="departamento_input"/>
+   </item>
+   <item row="10" column="1">
+    <widget class="QPushButton" name="Inserir">
+     <property name="text">
+      <string>Inserir</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="nome_label">
+     <property name="text">
+      <string>Nome:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="2">
+    <widget class="QLineEdit" name="salario_input"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="funcao_label">
+     <property name="text">
+      <string>Função</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="salario_label">
+     <property name="text">
+      <string>Salário:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="nivel_label">
+     <property name="text">
+      <string>Nível:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QLineEdit" name="funcao_input"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="departamento_label">
+     <property name="text">
+      <string>Departamento:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0" colspan="2">
+    <widget class="KComboBox" name="nivel_input">
+     <item>
+      <property name="text">
+       <string>T1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>T2</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QLineEdit" name="nome_input">
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhNone</set>
+     </property>
+     <property name="maxLength">
+      <number>90</number>
+     </property>
+     <property name="frame">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QPushButton" name="Cancelar">
+     <property name="text">
+      <string>Cancelar</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>nome_input</tabstop>
+  <tabstop>departamento_input</tabstop>
+  <tabstop>funcao_input</tabstop>
+  <tabstop>salario_input</tabstop>
+  <tabstop>nivel_input</tabstop>
+  <tabstop>Cancelar</tabstop>
+  <tabstop>Inserir</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
