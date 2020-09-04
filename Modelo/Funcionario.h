@@ -4,274 +4,298 @@
 #include <memory>
 using namespace std;
 
-class Funcionario{
+class Funcionario
+{
 
-    protected:
-        string codigo, nome, nivel;
-        static double salarioBase;
+protected:
+    string codigo, nome, nivel;
+    static double salarioBase;
 
-    public:
-        Funcionario(){}
-        Funcionario(string _codigo, string _nome){
-            codigo=_codigo;
-            nome=_nome;
-        }
+public:
+    Funcionario() {}
+    Funcionario(string _codigo, string _nome)
+    {
+        codigo = _codigo;
+        nome = _nome;
+    }
 
-        virtual double calculaSalario()=0;
-        virtual string getCodigo()=0;
-        virtual string getNome()=0;
-        virtual string getNivel()=0;
-        virtual double getSalarioBase()=0;
-        virtual void setCodigo(string _codigo)=0;
-        virtual void setNome(string _nome)=0;
-        virtual void setNivel(string _nivel)=0;
-        virtual void setSalarioBase(double _salario)=0;
-        virtual void Informacoes()=0;
+    virtual double calculaSalario() = 0;
+    virtual string getCodigo() = 0;
+    virtual string getNome() = 0;
+    virtual string getNivel() = 0;
+    virtual double getSalarioBase() = 0;
+    virtual void setCodigo(string _codigo) = 0;
+    virtual void setNome(string _nome) = 0;
+    virtual void setNivel(string _nivel) = 0;
+    virtual void setSalarioBase(double _salario) = 0;
+    virtual void Informacoes() = 0;
 };
 
 double Funcionario::salarioBase = 0;
 
+class Tecnico : public Funcionario
+{
 
-class Tecnico : public Funcionario{
+private:
+    string funcao;
 
-    private:
-        string funcao;
+public:
+    ~Tecnico() {}
+    Tecnico() {}
+    Tecnico(string _codigo, string _nome, string _nivel, string _funcao) : Funcionario(_codigo, _nome)
+    {
+        nivel = _nivel;
+        funcao = _funcao;
+    }
 
-    public:
-        ~Tecnico(){}
-        Tecnico(){}
-        Tecnico(string _codigo, string _nome, string _nivel, string _funcao):
-        Funcionario(_codigo, _nome){
-            nivel=_nivel;
-            funcao=_funcao;
-        }
+    double calculaSalario()
+    {
+        double adicional = (nivel == "T1") ? salarioBase * 0.1 : salarioBase * 0.2;
+        return salarioBase + adicional;
+    }
 
-        double calculaSalario(){
-           double adicional =(nivel=="T1") ? salarioBase*0.1 : salarioBase*0.2;
-           return salarioBase+adicional;
-        }
+    void Informacoes()
+    {
+        cout << "\nNome:" << nome << "\nCodigo:" << codigo << "\nNivel:" << nivel << "\nSalario:" << calculaSalario() << "\nFunção:" << funcao;
+    }
 
-        void Informacoes(){
-            cout<<
-            "\nNome:"<<nome<<
-            "\nCodigo:"<<codigo<<
-            "\nNivel:"<<nivel<<
-            "\nSalario:"<<calculaSalario()<<
-            "\nFunção:"<<funcao;
-        }
+    string getFuncao()
+    {
+        return funcao;
+    }
 
-        string getFuncao(){
-            return funcao;
-        }
+    string getNome()
+    {
+        return nome;
+    }
 
-        string getNome(){
-            return nome;
-        }
+    string getCodigo()
+    {
+        return codigo;
+    }
 
+    string getNivel()
+    {
+        return nivel;
+    }
 
-        string getCodigo(){
-            return codigo;
-        }
+    double getSalarioBase()
+    {
+        return salarioBase;
+    }
 
-        string getNivel(){
-            return nivel;
-        }
+    void setNome(string _nome)
+    {
+        nome = _nome;
+    }
 
-        double getSalarioBase(){
-            return salarioBase;
-        }
+    void setCodigo(string _codigo)
+    {
+        codigo = _codigo;
+    }
 
-        void setNome(string _nome){
-            nome=_nome;
-        }
+    void setNivel(string _nivel)
+    {
+        nivel = _nivel;
+    }
 
-        void setCodigo(string _codigo){
-            codigo=_codigo;
-        }
+    void setSalarioBase(double _salario)
+    {
+        salarioBase = _salario;
+    }
 
-        void setNivel(string _nivel){
-            nivel=_nivel;
-        }
-        
-        void setSalarioBase(double _salario){
-            salarioBase=_salario;
-        }
-
-        void setFuncao(string _funcao){
-            funcao=_funcao;
-        }
+    void setFuncao(string _funcao)
+    {
+        funcao = _funcao;
+    }
 };
 
+class Docente : public Funcionario
+{
 
-class Docente : public Funcionario{
+protected:
+    string Titulacao;
 
-    protected:
-        string Titulacao;
+public:
+    Docente(string codigo, string nome, string _Titulacao) : Funcionario(codigo, nome)
+    {
+        Titulacao = _Titulacao;
+    }
 
-    public:
-        Docente(string codigo, string nome, string _Titulacao):
-        Funcionario(codigo, nome)
-        {
-            Titulacao=_Titulacao;
-        }
-
-        virtual string getTitulacao()=0;
-        virtual void setTitulacao(string titulo)=0;
+    virtual string getTitulacao() = 0;
+    virtual void setTitulacao(string titulo) = 0;
 };
 
+class DocenteEfetivo : public Docente
+{
 
-class DocenteEfetivo : public Docente{
+private:
+    string area;
 
-    private:
-        string area;
+public:
+    ~DocenteEfetivo() {}
 
-    public:
-        ~DocenteEfetivo(){}
-        
-        DocenteEfetivo(string _Area, string codigo, string nome, string _nivel, string titulacao):
-        Docente(codigo, nome, titulacao){
-            area=_Area;
-            nivel=_nivel;
-        }
+    DocenteEfetivo(string _Area, string codigo, string nome, string _nivel, string titulacao) : Docente(codigo, nome, titulacao)
+    {
+        area = _Area;
+        nivel = _nivel;
+    }
 
-        double calculaSalario(){
-            double adicional = (nivel=="D1") ? salarioBase*0.05 : ((nivel=="D2") ? salarioBase*0.1 : salarioBase*0.2);
-            return salarioBase+adicional;
-        }
+    double calculaSalario()
+    {
+        double adicional = (nivel == "D1") ? salarioBase * 0.05 : ((nivel == "D2") ? salarioBase * 0.1 : salarioBase * 0.2);
+        return salarioBase + adicional;
+    }
 
-        void Informacoes(){
-            cout<<
-            "Nome:"<<nome<<
-            "\nCodigo:"<<codigo<<
-            "\nNivel:"<<nivel<<
-            "\nSalario:"<<calculaSalario()<<
-            "\nTitulo:"<<Titulacao<<
-            "\bArea:"<<area;
-        }
+    void Informacoes()
+    {
+        cout << "Nome:" << nome << "\nCodigo:" << codigo << "\nNivel:" << nivel << "\nSalario:" << calculaSalario() << "\nTitulo:" << Titulacao << "\bArea:" << area;
+    }
 
-        string getArea(){
-            return area;
-        }
+    string getArea()
+    {
+        return area;
+    }
 
-        string getTitulacao(){
-            return Titulacao;
-        }
+    string getTitulacao()
+    {
+        return Titulacao;
+    }
 
-        string getNome(){
-            return nome;
-        }
+    string getNome()
+    {
+        return nome;
+    }
 
-        string getCodigo(){
-            return codigo;
-        }
+    string getCodigo()
+    {
+        return codigo;
+    }
 
-        string getNivel(){
-            return nivel;
-        }
+    string getNivel()
+    {
+        return nivel;
+    }
 
-        double getSalarioBase(){
-            return salarioBase;
-        }
+    double getSalarioBase()
+    {
+        return salarioBase;
+    }
 
-        void setArea(string _area){
-            area=_area;
-        }
+    void setArea(string _area)
+    {
+        area = _area;
+    }
 
-        void setTitulacao(string _titulo){
-            Titulacao=_titulo;
-        }
+    void setTitulacao(string _titulo)
+    {
+        Titulacao = _titulo;
+    }
 
-        void setNome(string _nome){
-            nome=_nome;
-        }
+    void setNome(string _nome)
+    {
+        nome = _nome;
+    }
 
-        void setCodigo(string _codigo){
-            codigo=_codigo;
-        }
+    void setCodigo(string _codigo)
+    {
+        codigo = _codigo;
+    }
 
-        void setNivel(string _nivel){
-            nivel=_nivel;
-        }
-        
-        void setSalarioBase(double _salario){
-            salarioBase=_salario;
-        }
+    void setNivel(string _nivel)
+    {
+        nivel = _nivel;
+    }
+
+    void setSalarioBase(double _salario)
+    {
+        salarioBase = _salario;
+    }
 };
 
-class DocenteSub : public Docente{
+class DocenteSub : public Docente
+{
 
-    private:
-        int cargaHoraria;
+private:
+    int cargaHoraria;
 
-    public:
-        ~DocenteSub(){}
+public:
+    ~DocenteSub() {}
 
-        DocenteSub(int _cargaHoraria, string codigo, string nome, string _nivel, string titulacao):
-        Docente(codigo, nome, titulacao){
-                cargaHoraria=_cargaHoraria;
-                nivel=_nivel;
-        }
+    DocenteSub(int _cargaHoraria, string codigo, string nome, string _nivel, string titulacao) : Docente(codigo, nome, titulacao)
+    {
+        cargaHoraria = _cargaHoraria;
+        nivel = _nivel;
+    }
 
-        double calculaSalario(){
-            double adicional = (nivel=="S1") ? salarioBase*0.05 : salarioBase*0.1;
-            return salarioBase+adicional;
-        }
+    double calculaSalario()
+    {
+        double adicional = (nivel == "S1") ? salarioBase * 0.05 : salarioBase * 0.1;
+        return salarioBase + adicional;
+    }
 
-        void Informacoes(){
-            cout<<
-            "Nome:"<<nome<<
-            "\nCodigo:"<<codigo<<
-            "\nNivel:"<<nivel<<
-            "\nSalario:"<<calculaSalario()<<
-            "\nTitulo:"<<Titulacao<<
-            "\bcargaHoraria:"<<cargaHoraria;
-        }
+    void Informacoes()
+    {
+        cout << "Nome:" << nome << "\nCodigo:" << codigo << "\nNivel:" << nivel << "\nSalario:" << calculaSalario() << "\nTitulo:" << Titulacao << "\bcargaHoraria:" << cargaHoraria;
+    }
 
-        int getCargaHoraria(){
-            return cargaHoraria;
-        }
+    int getCargaHoraria()
+    {
+        return cargaHoraria;
+    }
 
-        string getTitulacao(){
-            return Titulacao;
-        }
+    string getTitulacao()
+    {
+        return Titulacao;
+    }
 
-        string getNome(){
-            return nome;
-        }
+    string getNome()
+    {
+        return nome;
+    }
 
-        string getCodigo(){
-            return codigo;
-        }
+    string getCodigo()
+    {
+        return codigo;
+    }
 
-        string getNivel(){
-            return nivel;
-        }
+    string getNivel()
+    {
+        return nivel;
+    }
 
-        double getSalarioBase(){
-            return salarioBase;
-        }
+    double getSalarioBase()
+    {
+        return salarioBase;
+    }
 
-        void setArea(int _cargaHoraria){
-            cargaHoraria=_cargaHoraria;
-        }
+    void setArea(int _cargaHoraria)
+    {
+        cargaHoraria = _cargaHoraria;
+    }
 
-        void setTitulacao(string _titulo){
-            Titulacao=_titulo;
-        }
+    void setTitulacao(string _titulo)
+    {
+        Titulacao = _titulo;
+    }
 
-        void setNome(string _nome){
-            nome=_nome;
-        }
+    void setNome(string _nome)
+    {
+        nome = _nome;
+    }
 
-        void setCodigo(string _codigo){
-            codigo=_codigo;
-        }
+    void setCodigo(string _codigo)
+    {
+        codigo = _codigo;
+    }
 
-        void setNivel(string _nivel){
-            nivel=_nivel;
-        }
-        
-        void setSalarioBase(double _salario){
-            salarioBase=_salario;
-        }
+    void setNivel(string _nivel)
+    {
+        nivel = _nivel;
+    }
+
+    void setSalarioBase(double _salario)
+    {
+        salarioBase = _salario;
+    }
 };
