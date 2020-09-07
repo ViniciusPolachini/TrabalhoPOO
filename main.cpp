@@ -1,9 +1,11 @@
-#include <iostream>
-#include <string>
-#include <memory>
-#include <vector>
-using namespace std;
+#include "mainwindow.h"
 
-int main(){
-    
+#include <QApplication>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
 }
