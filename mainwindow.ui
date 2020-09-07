@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Universidade</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="departamentos">
+       <attribute name="title">
+        <string>Departamentos</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_8">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>196</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Numero de funcionarios</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Gasto com Funcionários</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="funcionarios">
+       <attribute name="title">
+        <string>Funcionários</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_9">
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>196</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Salário</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nível</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Departamento</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tecnicos">
+       <attribute name="title">
+        <string>Técnicos</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_10">
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>196</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Função</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Salário</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nível</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Departamento</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="docentes">
+       <attribute name="title">
+        <string>Docentes</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_11">
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>196</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Titulação</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Salário</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nível</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Departamento</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="docentesefetivos">
+       <attribute name="title">
+        <string>Docentes Efetivos</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_11">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_12">
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>196</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Titulação</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Área</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Salário</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nível</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Departamento</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="docentessubstitutos">
+       <attribute name="title">
+        <string>Docentes Substitutos</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_12">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_13">
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>196</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Titulação</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Carga Horária</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Salário</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nível</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Departamento</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="inserirdepartamento">
+       <attribute name="title">
+        <string>Inserir Departamento</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Departamento:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="lineEdit"/>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>Inserir</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="inserirtecnico">
+       <attribute name="title">
+        <string>Inserir Técnico</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="2">
+         <widget class="QLineEdit" name="lineEdit_2"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLineEdit" name="lineEdit_3"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Função:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Salário:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Nível:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QComboBox" name="comboBox">
+          <item>
+           <property name="text">
+            <string>T1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>T2</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLineEdit" name="lineEdit_4"/>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Departamento:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Nome:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QComboBox" name="comboBox_2"/>
+        </item>
+        <item row="0" column="3" rowspan="5">
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Inserir</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="inserirdocefetivo">
+       <attribute name="title">
+        <string>Inserir Docente Efetivo</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>Departamento:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Nome:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>Titulação:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QComboBox" name="comboBox_3"/>
+        </item>
+        <item row="3" column="1">
+         <widget class="QComboBox" name="comboBox_4">
+          <item>
+           <property name="text">
+            <string>T1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>T2</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Salário:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="lineEdit_5"/>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="lineEdit_7"/>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Nível:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="lineEdit_6"/>
+        </item>
+        <item row="0" column="2" rowspan="5">
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Inserir</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="inserirdocsubstituto">
+       <attribute name="title">
+        <string>Inserir Docente Substituto</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="lineEdit_8"/>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="lineEdit_10"/>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="lineEdit_9"/>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>Nome:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>Nível:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>Salário:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_16">
+          <property name="text">
+           <string>Carga Horária:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QComboBox" name="comboBox_6">
+          <item>
+           <property name="text">
+            <string>T1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>T2</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>Departamento:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QComboBox" name="comboBox_5"/>
+        </item>
+        <item row="0" column="2" rowspan="5">
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Inserir</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArquivo">
+    <property name="title">
+     <string>Arquivo</string>
+    </property>
+    <addaction name="actionSalvar"/>
+    <addaction name="actionAbrir"/>
+    <addaction name="actionSair"/>
+   </widget>
+   <widget class="QMenu" name="menuPesquisar">
+    <property name="title">
+     <string>Pesquisar</string>
+    </property>
+    <addaction name="actionDepartamento"/>
+    <addaction name="actionFuncion_rio"/>
+    <addaction name="actionT_cnico"/>
+    <addaction name="actionDocente_Efetivo"/>
+    <addaction name="actionDocente_Substituto"/>
+   </widget>
+   <widget class="QMenu" name="menuExportar_Relat_rio">
+    <property name="title">
+     <string>Exportar Relatório</string>
+    </property>
+    <addaction name="actionRelat_rio_Geral"/>
+    <addaction name="actionRelat_rio_dos_Departamentos"/>
+    <addaction name="actionRelat_rio_dos_Funcion_rios"/>
+    <addaction name="actionRelat_rio_dos_T_cnicos"/>
+    <addaction name="actionRelat_rio_dos_Docentes"/>
+    <addaction name="actionRelat_rio_dos_Docentes_Efetivos"/>
+    <addaction name="actionRelat_rio_dos_Docentes_Substitutos"/>
+   </widget>
+   <addaction name="menuArquivo"/>
+   <addaction name="menuPesquisar"/>
+   <addaction name="menuExportar_Relat_rio"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSalvar">
+   <property name="text">
+    <string>Salvar</string>
+   </property>
+  </action>
+  <action name="actionAbrir">
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionDepartamento">
+   <property name="text">
+    <string>Departamento</string>
+   </property>
+  </action>
+  <action name="actionFuncion_rio">
+   <property name="text">
+    <string>Funcionário</string>
+   </property>
+  </action>
+  <action name="actionT_cnico">
+   <property name="text">
+    <string>Técnico</string>
+   </property>
+  </action>
+  <action name="actionDocente_Efetivo">
+   <property name="text">
+    <string>Docente Efetivo</string>
+   </property>
+  </action>
+  <action name="actionDocente_Substituto">
+   <property name="text">
+    <string>Docente Substituto</string>
+   </property>
+  </action>
+  <action name="actionSair">
+   <property name="text">
+    <string>Sair</string>
+   </property>
+  </action>
+  <action name="actionRelat_rio_Geral">
+   <property name="text">
+    <string>Relatório Geral</string>
+   </property>
+  </action>
+  <action name="actionRelat_rio_dos_Departamentos">
+   <property name="text">
+    <string>Relatório dos Departamentos</string>
+   </property>
+  </action>
+  <action name="actionRelat_rio_dos_Funcion_rios">
+   <property name="text">
+    <string>Relatório dos Funcionários</string>
+   </property>
+  </action>
+  <action name="actionRelat_rio_dos_T_cnicos">
+   <property name="text">
+    <string>Relatório dos Técnicos</string>
+   </property>
+  </action>
+  <action name="actionRelat_rio_dos_Docentes">
+   <property name="text">
+    <string>Relatório dos Docentes</string>
+   </property>
+  </action>
+  <action name="actionRelat_rio_dos_Docentes_Efetivos">
+   <property name="text">
+    <string>Relatório dos Docentes Efetivos</string>
+   </property>
+  </action>
+  <action name="actionRelat_rio_dos_Docentes_Substitutos">
+   <property name="text">
+    <string>Relatório dos Docentes Substitutos</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>tableWidget_8</tabstop>
+  <tabstop>tableWidget_9</tabstop>
+  <tabstop>tableWidget_10</tabstop>
+  <tabstop>tableWidget_11</tabstop>
+  <tabstop>tableWidget_12</tabstop>
+  <tabstop>tableWidget_13</tabstop>
+  <tabstop>tabWidget_2</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>lineEdit_3</tabstop>
+  <tabstop>lineEdit_4</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>comboBox_2</tabstop>
+  <tabstop>lineEdit_6</tabstop>
+  <tabstop>lineEdit_7</tabstop>
+  <tabstop>lineEdit_5</tabstop>
+  <tabstop>comboBox_4</tabstop>
+  <tabstop>comboBox_3</tabstop>
+  <tabstop>lineEdit_9</tabstop>
+  <tabstop>lineEdit_10</tabstop>
+  <tabstop>lineEdit_8</tabstop>
+  <tabstop>comboBox_6</tabstop>
+  <tabstop>comboBox_5</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
