@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTabWidget" name="tabWidget">
+     <widget class="QTabWidget" name="table_display">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -38,7 +38,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_7">
         <item>
-         <widget class="QTableWidget" name="tableWidget_8">
+         <widget class="QTableWidget" name="table_depart">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -78,7 +78,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_8">
         <item>
-         <widget class="QTableWidget" name="tableWidget_9">
+         <widget class="QTableWidget" name="table_func">
           <attribute name="horizontalHeaderDefaultSectionSize">
            <number>196</number>
           </attribute>
@@ -117,7 +117,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_9">
         <item>
-         <widget class="QTableWidget" name="tableWidget_10">
+         <widget class="QTableWidget" name="table_tecn">
           <attribute name="horizontalHeaderDefaultSectionSize">
            <number>196</number>
           </attribute>
@@ -161,7 +161,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_10">
         <item>
-         <widget class="QTableWidget" name="tableWidget_11">
+         <widget class="QTableWidget" name="table_doc">
           <attribute name="horizontalHeaderDefaultSectionSize">
            <number>196</number>
           </attribute>
@@ -205,7 +205,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_11">
         <item>
-         <widget class="QTableWidget" name="tableWidget_12">
+         <widget class="QTableWidget" name="table_doc_ef">
           <attribute name="horizontalHeaderDefaultSectionSize">
            <number>196</number>
           </attribute>
@@ -254,7 +254,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_12">
         <item>
-         <widget class="QTableWidget" name="tableWidget_13">
+         <widget class="QTableWidget" name="table_doc_sub">
           <attribute name="horizontalHeaderDefaultSectionSize">
            <number>196</number>
           </attribute>
@@ -300,7 +300,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QTabWidget" name="tabWidget_2">
+     <widget class="QTabWidget" name="table_insert">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -308,7 +308,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="inserirdepartamento">
        <attribute name="title">
@@ -323,10 +323,10 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit"/>
+         <widget class="QLineEdit" name="line_depart"/>
         </item>
         <item row="0" column="2">
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="insert_depart">
           <property name="text">
            <string>Inserir</string>
           </property>
@@ -340,10 +340,10 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="2">
-         <widget class="QLineEdit" name="lineEdit_2"/>
+         <widget class="QLineEdit" name="line_tecn_name"/>
         </item>
         <item row="1" column="2">
-         <widget class="QLineEdit" name="lineEdit_3"/>
+         <widget class="QLineEdit" name="line_tecn_func"/>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_3">
@@ -367,7 +367,7 @@
          </widget>
         </item>
         <item row="3" column="2">
-         <widget class="QComboBox" name="comboBox">
+         <widget class="QComboBox" name="box_tecn_nivel">
           <item>
            <property name="text">
             <string>T1</string>
@@ -381,7 +381,7 @@
          </widget>
         </item>
         <item row="2" column="2">
-         <widget class="QLineEdit" name="lineEdit_4"/>
+         <widget class="QLineEdit" name="line_tecn_salario"/>
         </item>
         <item row="4" column="0">
          <widget class="QLabel" name="label_6">
@@ -398,10 +398,10 @@
          </widget>
         </item>
         <item row="4" column="2">
-         <widget class="QComboBox" name="comboBox_2"/>
+         <widget class="QComboBox" name="box_tecn_depart"/>
         </item>
         <item row="0" column="3" rowspan="5">
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="insert_tecn">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
             <horstretch>0</horstretch>
@@ -442,10 +442,10 @@
          </widget>
         </item>
         <item row="4" column="1">
-         <widget class="QComboBox" name="comboBox_3"/>
+         <widget class="QComboBox" name="box_doc_ef_depart"/>
         </item>
         <item row="3" column="1">
-         <widget class="QComboBox" name="comboBox_4">
+         <widget class="QComboBox" name="box_doc_ef_nivel">
           <item>
            <property name="text">
             <string>T1</string>
@@ -466,10 +466,10 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_5"/>
+         <widget class="QLineEdit" name="line_doc_ef_salario"/>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_7"/>
+         <widget class="QLineEdit" name="line_doc_ef_titulo"/>
         </item>
         <item row="3" column="0">
          <widget class="QLabel" name="label_8">
@@ -479,10 +479,10 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_6"/>
+         <widget class="QLineEdit" name="line_doc_ef_nome"/>
         </item>
         <item row="0" column="2" rowspan="5">
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="QPushButton" name="insert_doc_ef">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
             <horstretch>0</horstretch>
@@ -502,13 +502,13 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_8"/>
+         <widget class="QLineEdit" name="line_doc_sub_salario"/>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_10"/>
+         <widget class="QLineEdit" name="line_doc_sub_carga"/>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_9"/>
+         <widget class="QLineEdit" name="line_doc_sub_nome"/>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_14">
@@ -539,7 +539,7 @@
          </widget>
         </item>
         <item row="3" column="1">
-         <widget class="QComboBox" name="comboBox_6">
+         <widget class="QComboBox" name="box_doc_sub_nivel">
           <item>
            <property name="text">
             <string>T1</string>
@@ -560,10 +560,10 @@
          </widget>
         </item>
         <item row="4" column="1">
-         <widget class="QComboBox" name="comboBox_5"/>
+         <widget class="QComboBox" name="box_doc_sub_depart"/>
         </item>
         <item row="0" column="2" rowspan="5">
-         <widget class="QPushButton" name="pushButton_4">
+         <widget class="QPushButton" name="insert_doc_sub">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
             <horstretch>0</horstretch>
@@ -595,18 +595,7 @@
      <string>Arquivo</string>
     </property>
     <addaction name="actionSalvar"/>
-    <addaction name="actionAbrir"/>
-    <addaction name="actionSair"/>
-   </widget>
-   <widget class="QMenu" name="menuPesquisar">
-    <property name="title">
-     <string>Pesquisar</string>
-    </property>
-    <addaction name="actionDepartamento"/>
-    <addaction name="actionFuncion_rio"/>
-    <addaction name="actionT_cnico"/>
-    <addaction name="actionDocente_Efetivo"/>
-    <addaction name="actionDocente_Substituto"/>
+    <addaction name="actionSair_2"/>
    </widget>
    <widget class="QMenu" name="menuExportar_Relat_rio">
     <property name="title">
@@ -621,13 +610,12 @@
     <addaction name="actionRelat_rio_dos_Docentes_Substitutos"/>
    </widget>
    <addaction name="menuArquivo"/>
-   <addaction name="menuPesquisar"/>
    <addaction name="menuExportar_Relat_rio"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionSalvar">
    <property name="text">
-    <string>Salvar</string>
+    <string>Pesquisar</string>
    </property>
   </action>
   <action name="actionAbrir">
@@ -700,33 +688,51 @@
     <string>Relatório dos Docentes Substitutos</string>
    </property>
   </action>
+  <action name="actionSalvar_2">
+   <property name="text">
+    <string>Salvar</string>
+   </property>
+  </action>
+  <action name="actionAbrir_2">
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionSair_2">
+   <property name="text">
+    <string>Sair</string>
+   </property>
+  </action>
  </widget>
  <tabstops>
-  <tabstop>tabWidget</tabstop>
-  <tabstop>tableWidget_8</tabstop>
-  <tabstop>tableWidget_9</tabstop>
-  <tabstop>tableWidget_10</tabstop>
-  <tabstop>tableWidget_11</tabstop>
-  <tabstop>tableWidget_12</tabstop>
-  <tabstop>tableWidget_13</tabstop>
-  <tabstop>tabWidget_2</tabstop>
-  <tabstop>lineEdit</tabstop>
-  <tabstop>pushButton</tabstop>
-  <tabstop>lineEdit_2</tabstop>
-  <tabstop>lineEdit_3</tabstop>
-  <tabstop>lineEdit_4</tabstop>
-  <tabstop>comboBox</tabstop>
-  <tabstop>comboBox_2</tabstop>
-  <tabstop>lineEdit_6</tabstop>
-  <tabstop>lineEdit_7</tabstop>
-  <tabstop>lineEdit_5</tabstop>
-  <tabstop>comboBox_4</tabstop>
-  <tabstop>comboBox_3</tabstop>
-  <tabstop>lineEdit_9</tabstop>
-  <tabstop>lineEdit_10</tabstop>
-  <tabstop>lineEdit_8</tabstop>
-  <tabstop>comboBox_6</tabstop>
-  <tabstop>comboBox_5</tabstop>
+  <tabstop>table_display</tabstop>
+  <tabstop>table_depart</tabstop>
+  <tabstop>table_func</tabstop>
+  <tabstop>table_tecn</tabstop>
+  <tabstop>table_doc</tabstop>
+  <tabstop>table_doc_ef</tabstop>
+  <tabstop>table_doc_sub</tabstop>
+  <tabstop>table_insert</tabstop>
+  <tabstop>line_depart</tabstop>
+  <tabstop>insert_depart</tabstop>
+  <tabstop>line_tecn_name</tabstop>
+  <tabstop>line_tecn_func</tabstop>
+  <tabstop>line_tecn_salario</tabstop>
+  <tabstop>box_tecn_nivel</tabstop>
+  <tabstop>box_tecn_depart</tabstop>
+  <tabstop>insert_tecn</tabstop>
+  <tabstop>line_doc_ef_nome</tabstop>
+  <tabstop>line_doc_ef_titulo</tabstop>
+  <tabstop>line_doc_ef_salario</tabstop>
+  <tabstop>box_doc_ef_nivel</tabstop>
+  <tabstop>box_doc_ef_depart</tabstop>
+  <tabstop>insert_doc_ef</tabstop>
+  <tabstop>line_doc_sub_nome</tabstop>
+  <tabstop>line_doc_sub_carga</tabstop>
+  <tabstop>line_doc_sub_salario</tabstop>
+  <tabstop>box_doc_sub_nivel</tabstop>
+  <tabstop>box_doc_sub_depart</tabstop>
+  <tabstop>insert_doc_sub</tabstop>
  </tabstops>
  <resources/>
  <connections/>

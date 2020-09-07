@@ -1,4 +1,4 @@
-# Trabalho Programação Orientada a Objetos 1
+# Trabalho Programação Orientada a Objetos
 
 
 Rafael Rosseto
