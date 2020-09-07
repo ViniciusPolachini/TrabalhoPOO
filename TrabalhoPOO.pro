@@ -27,7 +27,9 @@ HEADERS += \
     universidade.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    pesquisar.ui \
+    resultados.ui
 
 TRANSLATIONS += \
     TrabalhoPOO_pt_BR.ts
