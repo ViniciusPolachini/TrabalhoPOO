@@ -57,12 +57,14 @@ class Departamento{
             nome=_nome;
         }
 
-        void Informacoes(){
-            cout<<
-            "\n\nNome:"<< nome<<
-            "\nCódigo:"<<codigo<<
-            "\nNúmero de funcionarios:"<<NFuncionarios<<
-            "\nGasto total:"<< calculaGastos();
+        string Informacoes(){
+            string NF = to_string(NFuncionarios);
+            string Gastos= to_string(calculaGastos());
+            string Info="\n\nNome:"+nome+
+            "\nCódigo:"+codigo+
+            "\nNúmero de funcionarios:"+NF+
+             "\nGasto total:"+Gastos;
+            return Info;
         }
 };
 

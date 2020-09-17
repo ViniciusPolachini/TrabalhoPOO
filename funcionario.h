@@ -26,7 +26,7 @@ class Funcionario{
         virtual void setNome(string _nome)=0;
         virtual void setNivel(string _nivel)=0;
         virtual void setSalarioBase(double _salario)=0;
-        virtual void Informacoes()=0;
+        virtual string Informacoes()=0;
 };
 
 double Funcionario::salarioBase = 0;
@@ -51,13 +51,14 @@ class Tecnico : public Funcionario{
            return salarioBase+adicional;
         }
 
-        void Informacoes(){
-            cout<<
-            "\nNome:"<<nome<<
-            "\nCodigo:"<<codigo<<
-            "\nNivel:"<<nivel<<
-            "\nSalario:"<<calculaSalario()<<
-            "\nFunção:"<<funcao;
+        string Informacoes(){
+            string salario = to_string(calculaSalario());
+            string Info="\nNome:"+nome+
+                        "\nCodigo:"+codigo+
+                        "\nNivel:"+nivel+
+                        "\nSalario:"+salario+
+                        "\nFunção:"+funcao;
+            return Info;
         }
 
         string getFuncao(){
@@ -139,14 +140,15 @@ class DocenteEfetivo : public Docente{
             return salarioBase+adicional;
         }
 
-        void Informacoes(){
-            cout<<
-            "Nome:"<<nome<<
-            "\nCodigo:"<<codigo<<
-            "\nNivel:"<<nivel<<
-            "\nSalario:"<<calculaSalario()<<
-            "\nTitulo:"<<Titulacao<<
-            "\bArea:"<<area;
+        string Informacoes(){
+            string salario = to_string(calculaSalario());
+            string Info="\nNome:"+nome+
+                        "\nCodigo:"+codigo+
+                        "\nNivel:"+nivel+
+                        "\nSalario:"+salario+
+                        "\nTitulo:"+Titulacao+
+                        "\nFunção:"+area;
+            return Info;
         }
 
         string getArea(){
@@ -217,14 +219,16 @@ class DocenteSub : public Docente{
             return salarioBase+adicional;
         }
 
-        void Informacoes(){
-            cout<<
-            "Nome:"<<nome<<
-            "\nCodigo:"<<codigo<<
-            "\nNivel:"<<nivel<<
-            "\nSalario:"<<calculaSalario()<<
-            "\nTitulo:"<<Titulacao<<
-            "\bcargaHoraria:"<<cargaHoraria;
+        string Informacoes(){
+            string salario = to_string(calculaSalario());
+            string carga = to_string(cargaHoraria);
+            string Info="\nNome:"+nome+
+                        "\nCodigo:"+codigo+
+                        "\nNivel:"+nivel+
+                        "\nSalario:"+salario+
+                        "\nTitulo:"+Titulacao+
+                        "\nFunção:"+carga;
+            return Info;
         }
 
         int getCargaHoraria(){

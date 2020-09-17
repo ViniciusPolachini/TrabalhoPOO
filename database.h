@@ -31,14 +31,13 @@ class DataBase{
         void AddFuncionario(Funcionario* funcionario, string codigo){
             if(contF<MAXF){
                 int i=0;
-                for(int i=0; i<contD; i++){
+                for(; i<contD; i++){
                     if(departamentos[i]->getCodigo()==codigo){
                         funcionarios[contF]=funcionario;
                         contF++;    
                         departamentos[i]->AddFuncionario(funcionario);
                         break;
                     }
-                    else if(i==contD) delete(funcionario);
                 }
             }
         }

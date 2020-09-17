@@ -20,6 +20,7 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    controler.h \
     database.h \
     departamento.h \
     funcionario.h \

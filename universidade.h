@@ -66,13 +66,13 @@ class Universidade{
             }
         }
 
-        void InfoDepartamento(string codigo){
+        string InfoDepartamento(string codigo){
             Departamento* departamento = database->getDepartamento(codigo);
             if(departamento != nullptr){
-                departamento->Informacoes();
+               return departamento->Informacoes();
             }
             else{
-                cout<<"Inexistente";
+                return "Inexistente";
             }
         }
 
