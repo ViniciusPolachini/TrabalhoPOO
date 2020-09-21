@@ -17,7 +17,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    pesquisar.cpp \
+    resultados.cpp
 
 HEADERS += \
     controler.h \
@@ -25,6 +27,8 @@ HEADERS += \
     departamento.h \
     funcionario.h \
     mainwindow.h \
+    pesquisar.h \
+    resultados.h \
     universidade.h
 
 FORMS += \

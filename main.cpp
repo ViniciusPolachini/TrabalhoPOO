@@ -1,4 +1,4 @@
-c#include "mainwindow.h"
+#include "mainwindow.h"
 #include "ui_pesquisar.h"
 #include "ui_resultados.h"
 
