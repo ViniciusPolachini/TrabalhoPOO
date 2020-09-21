@@ -30,7 +30,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="departamentos">
        <attribute name="title">
@@ -308,7 +308,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="inserirdepartamento">
        <attribute name="title">
@@ -339,40 +339,6 @@
         <string>Inserir Técnico</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="2">
-         <widget class="QLineEdit" name="line_tecn_name"/>
-        </item>
-        <item row="1" column="2">
-         <widget class="QLineEdit" name="line_tecn_func"/>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>Função:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Salário:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_5">
-          <property name="text">
-           <string>Nível:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>Departamento:</string>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_2">
           <property name="text">
@@ -380,7 +346,7 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="3" rowspan="5">
+        <item row="0" column="3" rowspan="4">
          <widget class="QPushButton" name="insert_tecn">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
@@ -393,14 +359,38 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="2">
-         <widget class="QLineEdit" name="line_tecn_depart"/>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Departamento:</string>
+          </property>
+         </widget>
         </item>
         <item row="3" column="2">
-         <widget class="QSpinBox" name="line_tecn_nivel"/>
+         <widget class="QLineEdit" name="line_tecn_depart"/>
         </item>
         <item row="2" column="2">
-         <widget class="QDoubleSpinBox" name="line_tecn_salario"/>
+         <widget class="QSpinBox" name="line_tecn_nivel"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Função:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLineEdit" name="line_tecn_name"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLineEdit" name="line_tecn_func"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Nível:</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -409,48 +399,27 @@
         <string>Inserir Docente Efetivo</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="4" column="0">
+        <item row="3" column="0">
          <widget class="QLabel" name="label_10">
           <property name="text">
            <string>Departamento:</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_9">
-          <property name="text">
-           <string>Nome:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_11">
-          <property name="text">
-           <string>Titulação:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_7">
-          <property name="text">
-           <string>Salário:</string>
-          </property>
-         </widget>
-        </item>
         <item row="1" column="1">
          <widget class="QLineEdit" name="line_doc_ef_titulo"/>
         </item>
-        <item row="3" column="0">
+        <item row="2" column="1">
+         <widget class="QSpinBox" name="line_doc_ef_nivel"/>
+        </item>
+        <item row="2" column="0">
          <widget class="QLabel" name="label_8">
           <property name="text">
            <string>Nível:</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="line_doc_ef_nome"/>
-        </item>
-        <item row="0" column="2" rowspan="5">
+        <item row="0" column="2" rowspan="4">
          <widget class="QPushButton" name="insert_doc_ef">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
@@ -463,14 +432,25 @@
           </property>
          </widget>
         </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Nome:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="line_doc_ef_nome"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>Titulação:</string>
+          </property>
+         </widget>
+        </item>
         <item row="3" column="1">
-         <widget class="QSpinBox" name="line_doc_ef_nivel"/>
-        </item>
-        <item row="4" column="1">
          <widget class="QLineEdit" name="line_doc_ef_depart"/>
-        </item>
-        <item row="2" column="1">
-         <widget class="QDoubleSpinBox" name="line_doc_ef_salario"/>
         </item>
        </layout>
       </widget>
@@ -479,12 +459,32 @@
         <string>Inserir Docente Substituto</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_12">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_14">
           <property name="text">
-           <string>Salário:</string>
+           <string>Nome:</string>
           </property>
          </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>Nível:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>Departamento:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QSpinBox" name="line_doc_sub_nivel"/>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLineEdit" name="line_doc_sub_depart"/>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_16">
@@ -493,17 +493,13 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_14">
-          <property name="text">
-           <string>Nome:</string>
-          </property>
-         </widget>
+        <item row="0" column="2">
+         <widget class="QLineEdit" name="line_doc_sub_nome"/>
         </item>
         <item row="1" column="2">
          <widget class="QLineEdit" name="line_doc_sub_carga"/>
         </item>
-        <item row="0" column="3" rowspan="5">
+        <item row="0" column="3" rowspan="4">
          <widget class="QPushButton" name="insert_doc_sub">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
@@ -516,31 +512,74 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_15">
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Salário Base</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>Departamento:</string>
+           <string>Atualizar salário base:</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="2">
-         <widget class="QLineEdit" name="line_doc_sub_nome"/>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_13">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
-           <string>Nível:</string>
+           <string>Salário base atual:</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="2">
-         <widget class="QSpinBox" name="line_doc_sub_nivel"/>
+        <item row="0" column="1">
+         <widget class="QDoubleSpinBox" name="line_salario_base">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
         </item>
-        <item row="4" column="2">
-         <widget class="QLineEdit" name="line_doc_sub_depart"/>
+        <item row="1" column="1">
+         <widget class="QDoubleSpinBox" name="line_atualizar_salario">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
         </item>
-        <item row="2" column="2">
-         <widget class="QDoubleSpinBox" name="line_doc_sub_salario"/>
+        <item row="0" column="2" rowspan="2">
+         <widget class="QPushButton" name="pushButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Atualizar</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -683,22 +722,22 @@
   <tabstop>insert_depart</tabstop>
   <tabstop>line_tecn_name</tabstop>
   <tabstop>line_tecn_func</tabstop>
-  <tabstop>line_tecn_salario</tabstop>
   <tabstop>line_tecn_nivel</tabstop>
   <tabstop>line_tecn_depart</tabstop>
   <tabstop>insert_tecn</tabstop>
   <tabstop>line_doc_ef_nome</tabstop>
   <tabstop>line_doc_ef_titulo</tabstop>
-  <tabstop>line_doc_ef_salario</tabstop>
   <tabstop>line_doc_ef_nivel</tabstop>
   <tabstop>line_doc_ef_depart</tabstop>
   <tabstop>insert_doc_ef</tabstop>
   <tabstop>line_doc_sub_nome</tabstop>
   <tabstop>line_doc_sub_carga</tabstop>
-  <tabstop>line_doc_sub_salario</tabstop>
   <tabstop>line_doc_sub_nivel</tabstop>
   <tabstop>line_doc_sub_depart</tabstop>
   <tabstop>insert_doc_sub</tabstop>
+  <tabstop>line_salario_base</tabstop>
+  <tabstop>line_atualizar_salario</tabstop>
+  <tabstop>pushButton</tabstop>
  </tabstops>
  <resources/>
  <connections/>
