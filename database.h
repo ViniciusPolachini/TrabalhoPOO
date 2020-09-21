@@ -28,11 +28,11 @@ class DataBase{
             else delete(departamento);
         }
 
-        void AddFuncionario(Funcionario* funcionario, string codigo){
+        void AddFuncionario(Funcionario* funcionario, string dep){
             if(contF<MAXF){
                 int i=0;
                 for(; i<contD; i++){
-                    if(departamentos[i]->getCodigo()==codigo){
+                    if(departamentos[i]->getNome()==dep){
                         funcionarios[contF]=funcionario;
                         contF++;    
                         departamentos[i]->AddFuncionario(funcionario);
@@ -50,9 +50,18 @@ class DataBase{
             return funcionarios;
         }
 
-        Departamento* getDepartamento(string codigo){
+        Departamento* getDepartamentoCodigo(string codigo){
             for(int i=0; i<contD; i++){
                 if(departamentos[i]->getCodigo()==codigo){
+                    return departamentos[i];
+                }
+            }
+            return nullptr;
+        }
+
+        Departamento* getDepartamentoNome(string nome){
+            for(int i=0; i<contD; i++){
+                if(departamentos[i]->getNome()==nome){
                     return departamentos[i];
                 }
             }

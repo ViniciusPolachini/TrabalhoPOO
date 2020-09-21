@@ -19,8 +19,44 @@ class controler{
         void AddTecnico(string nome, string codigo, string nivel, string funcao, string dep){
             Unesp->AddTecnico(nome,codigo,nivel,funcao,dep);
         }
-        string Tecnico(){
-            Unesp->InfoTecnicos();
+        string Geral(){
+            return Unesp->Geral();
+        }
+        string Funcionarios(){
+            return Unesp->InfoFuncionarios();
+        }
+        string Tecnicos(){
+            return Unesp->InfoTecnicos();
+        }
+        string Subs(){
+            return Unesp->InfoSub();
+        }
+        string Efetivos(){
+            return Unesp->InfoEfetivos();
+        }
+        string Docentes(){
+            return Unesp->InfoDocentes();
+        }
+        string Departamentos(){
+            return Unesp->InfoDepartamentos();
+        }
+        string DepartamentosEmFaixa(double min, double max){
+            return Unesp->DepartamentosEmFaixa(min, max);
+        }
+        string FuncionariosEmFaixa(double min, double max){
+            return Unesp->FuncionariosEmFaixa(min, max);
+        }
+        string FuncionarioCodigo(string codigo){
+            return Unesp->InfoFuncionarioCodigo(codigo);
+        }
+        string FuncionarioNome(string nome){
+            return Unesp->InfoFuncionarioNome(nome);
+        }
+        string DepartamentoCodigo(string codigo){
+            return Unesp->InfoDepartamentoCodigo(codigo);
+        }
+        string DepartamentoNome(string nome){
+            return Unesp->InfoDepartamentoNome(nome);
         }
 };
 
