@@ -26,6 +26,8 @@ private slots:
 
     void on_actionPesquisar_triggered();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
