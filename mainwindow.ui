@@ -308,7 +308,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="inserirdepartamento">
        <attribute name="title">
@@ -366,9 +366,6 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="2">
-         <widget class="QLineEdit" name="line_tecn_salario"/>
-        </item>
         <item row="4" column="0">
          <widget class="QLabel" name="label_6">
           <property name="text">
@@ -401,6 +398,9 @@
         </item>
         <item row="3" column="2">
          <widget class="QSpinBox" name="line_tecn_nivel"/>
+        </item>
+        <item row="2" column="2">
+         <widget class="QDoubleSpinBox" name="line_tecn_salario"/>
         </item>
        </layout>
       </widget>
@@ -437,9 +437,6 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
-         <widget class="QLineEdit" name="line_doc_ef_salario"/>
-        </item>
         <item row="1" column="1">
          <widget class="QLineEdit" name="line_doc_ef_titulo"/>
         </item>
@@ -472,6 +469,9 @@
         <item row="4" column="1">
          <widget class="QLineEdit" name="line_doc_ef_depart"/>
         </item>
+        <item row="2" column="1">
+         <widget class="QDoubleSpinBox" name="line_doc_ef_salario"/>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="inserirdocsubstituto">
@@ -502,9 +502,6 @@
         </item>
         <item row="1" column="2">
          <widget class="QLineEdit" name="line_doc_sub_carga"/>
-        </item>
-        <item row="2" column="2">
-         <widget class="QLineEdit" name="line_doc_sub_salario"/>
         </item>
         <item row="0" column="3" rowspan="5">
          <widget class="QPushButton" name="insert_doc_sub">
@@ -542,6 +539,9 @@
         <item row="4" column="2">
          <widget class="QLineEdit" name="line_doc_sub_depart"/>
         </item>
+        <item row="2" column="2">
+         <widget class="QDoubleSpinBox" name="line_doc_sub_salario"/>
+        </item>
        </layout>
       </widget>
      </widget>
@@ -561,26 +561,25 @@
     <property name="title">
      <string>Arquivo</string>
     </property>
-    <addaction name="actionSalvar"/>
-    <addaction name="actionSair_2"/>
+    <addaction name="actionPesquisar"/>
    </widget>
-   <widget class="QMenu" name="menuExportar_Relat_rio">
+   <widget class="QMenu" name="menuExportar_Relatorio">
     <property name="title">
      <string>Exportar Relatório</string>
     </property>
-    <addaction name="actionRelat_rio_Geral"/>
-    <addaction name="actionRelat_rio_dos_Departamentos"/>
-    <addaction name="actionRelat_rio_dos_Funcion_rios"/>
-    <addaction name="actionRelat_rio_dos_T_cnicos"/>
-    <addaction name="actionRelat_rio_dos_Docentes"/>
-    <addaction name="actionRelat_rio_dos_Docentes_Efetivos"/>
-    <addaction name="actionRelat_rio_dos_Docentes_Substitutos"/>
+    <addaction name="actionRelatorio_Geral"/>
+    <addaction name="actionRelatorio_dos_Departamentos"/>
+    <addaction name="actionRelatorio_dos_Funcion_rios"/>
+    <addaction name="actionRelatorio_dos_T_cnicos"/>
+    <addaction name="actionRelatorio_dos_Docentes"/>
+    <addaction name="actionRelatorio_dos_Docentes_Efetivos"/>
+    <addaction name="actionRelatorio_dos_Docentes_Substitutos"/>
    </widget>
    <addaction name="menuArquivo"/>
-   <addaction name="menuExportar_Relat_rio"/>
+   <addaction name="menuExportar_Relatorio"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionSalvar">
+  <action name="actionPesquisar">
    <property name="text">
     <string>Pesquisar</string>
    </property>
@@ -620,37 +619,37 @@
     <string>Sair</string>
    </property>
   </action>
-  <action name="actionRelat_rio_Geral">
+  <action name="actionRelatorio_Geral">
    <property name="text">
     <string>Relatório Geral</string>
    </property>
   </action>
-  <action name="actionRelat_rio_dos_Departamentos">
+  <action name="actionRelatorio_dos_Departamentos">
    <property name="text">
     <string>Relatório dos Departamentos</string>
    </property>
   </action>
-  <action name="actionRelat_rio_dos_Funcion_rios">
+  <action name="actionRelatorio_dos_Funcion_rios">
    <property name="text">
     <string>Relatório dos Funcionários</string>
    </property>
   </action>
-  <action name="actionRelat_rio_dos_T_cnicos">
+  <action name="actionRelatorio_dos_T_cnicos">
    <property name="text">
     <string>Relatório dos Técnicos</string>
    </property>
   </action>
-  <action name="actionRelat_rio_dos_Docentes">
+  <action name="actionRelatorio_dos_Docentes">
    <property name="text">
     <string>Relatório dos Docentes</string>
    </property>
   </action>
-  <action name="actionRelat_rio_dos_Docentes_Efetivos">
+  <action name="actionRelatorio_dos_Docentes_Efetivos">
    <property name="text">
     <string>Relatório dos Docentes Efetivos</string>
    </property>
   </action>
-  <action name="actionRelat_rio_dos_Docentes_Substitutos">
+  <action name="actionRelatorio_dos_Docentes_Substitutos">
    <property name="text">
     <string>Relatório dos Docentes Substitutos</string>
    </property>
@@ -665,7 +664,7 @@
     <string>Abrir</string>
    </property>
   </action>
-  <action name="actionSair_2">
+  <action name="actionFechar">
    <property name="text">
     <string>Sair</string>
    </property>

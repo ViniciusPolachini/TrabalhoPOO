@@ -20,6 +20,10 @@ private slots:
 
     void on_insert_depart_clicked();
 
+    void on_insert_doc_ef_clicked();
+
+    void on_insert_doc_sub_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
