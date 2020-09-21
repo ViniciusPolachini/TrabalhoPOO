@@ -24,6 +24,8 @@ private slots:
 
     void on_insert_doc_sub_clicked();
 
+    void on_actionPesquisar_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
