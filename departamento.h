@@ -60,10 +60,10 @@ class Departamento{
         string Informacoes(){
             string NF = to_string(NFuncionarios);
             string Gastos= to_string(calculaGastos());
-            string Info="\n\nNome:"+nome+
-            "\nCódigo:"+codigo+
-            "\nNúmero de funcionarios:"+NF+
-             "\nGasto total:"+Gastos;
+            string Info=    "\n\nNome:"+nome+
+                            "\nCódigo:"+codigo+
+                            "\nNúmero de funcionarios:"+NF+
+                            "\nGasto total:"+Gastos;
             return Info;
         }
 };
