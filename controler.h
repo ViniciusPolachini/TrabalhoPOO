@@ -4,7 +4,7 @@
 
 class controler{
     private:
-        Universidade* Unesp = new Universidade("Unesp");
+        static Universidade* Unesp;
     public:
         controler(){}
 
@@ -67,6 +67,6 @@ class controler{
         }
 };
 
-
+Universidade* controler::Unesp=new Universidade("Unesp");
 
 #endif // CONTROLER_H

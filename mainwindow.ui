@@ -30,7 +30,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="departamentos">
        <attribute name="title">
@@ -308,7 +308,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="inserirdepartamento">
        <attribute name="title">
