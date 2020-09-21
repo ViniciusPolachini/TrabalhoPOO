@@ -21,6 +21,14 @@ class Universidade{
             return to_string(codigo);
         }
 
+        void setSalarioBase(double salario){
+            database->setSalarioBase(salario);
+        }
+
+        string getSalariosBase(){
+            return to_string(database->getSalarioBase());
+        }
+
         void AddDepartamento(string Nome){
             string codigo=GeraCodigo(database->NumeroDepartamentos()+1);
             Departamento* departamento=new Departamento(Nome, codigo);

@@ -20,6 +20,10 @@ class DataBase{
             funcionarios[0]->setSalarioBase(salario);
         }
 
+        double getSalarioBase(){
+            return funcionarios[0]->getSalarioBase();
+        }
+
         void AddDepartamento(Departamento* departamento){
             if(contD<MAXD){
                 departamentos[contD] = departamento;

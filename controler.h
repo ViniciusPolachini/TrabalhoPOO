@@ -7,6 +7,10 @@ class controler{
         Universidade* Unesp = new Universidade("Unesp");
     public:
         controler(){}
+
+        void SetSalarioBase(double salario){
+            Unesp->setSalarioBase(salario);
+        }
         void AddDepartamento(string nome){
             Unesp->AddDepartamento(nome);
         }
@@ -57,6 +61,9 @@ class controler{
         }
         string DepartamentoNome(string nome){
             return Unesp->InfoDepartamentoNome(nome);
+        }
+        string getSalarioBase(){
+            return Unesp->getSalariosBase();
         }
 };
 

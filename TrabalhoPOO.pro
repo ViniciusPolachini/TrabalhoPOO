@@ -22,6 +22,7 @@ SOURCES += \
     resultados.cpp
 
 HEADERS += \
+    Constantes.h \
     controler.h \
     database.h \
     departamento.h \

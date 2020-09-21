@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <memory>
+#include "Constantes.h"
 using namespace std;
 
 class Funcionario{
@@ -47,8 +48,8 @@ class Tecnico : public Funcionario{
         }
 
         double calculaSalario(){
-           double adicional =(nivel=="T1") ? salarioBase*0.1 : salarioBase*0.2;
-           return salarioBase+adicional;
+           double adicional = salarioBase*Constantes::TabelaDeSalarios(nivel);
+           return adicional+salarioBase;
         }
 
         string Informacoes(){
@@ -136,7 +137,7 @@ class DocenteEfetivo : public Docente{
         }
 
         double calculaSalario(){
-            double adicional = (nivel=="D1") ? salarioBase*0.05 : ((nivel=="D2") ? salarioBase*0.1 : salarioBase*0.2);
+            double adicional = salarioBase*Constantes::TabelaDeSalarios(nivel);
             return salarioBase+adicional;
         }
 
@@ -215,7 +216,7 @@ class DocenteSub : public Docente{
         }
 
         double calculaSalario(){
-            double adicional = (nivel=="S1") ? salarioBase*0.05 : salarioBase*0.1;
+           double adicional = salarioBase*Constantes::TabelaDeSalarios(nivel);
             return salarioBase+adicional;
         }
 
