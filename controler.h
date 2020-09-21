@@ -7,17 +7,17 @@ class controler{
         Universidade* Unesp = new Universidade("Unesp");
     public:
         controler(){}
-        void AddDepartamento(string nome, string codigo){
-            Unesp->AddDepartamento(nome, codigo);
+        void AddDepartamento(string nome){
+            Unesp->AddDepartamento(nome);
         }
-        void AddDocenteEfetivo(string nome, string codigo, string nivel, string titulo, string dep, string area){
-            Unesp->AddDocenteEfetivo(nome, codigo, nivel, titulo, area, dep);
+        void AddDocenteEfetivo(string nome, string nivel, string titulo, string dep, string area){
+            Unesp->AddDocenteEfetivo(nome, nivel, titulo, area, dep);
         }
-        void AddDocenteSub(string nome, string codigo, string nivel, string titulo, string dep, int carga){
-            Unesp->AddDocenteSub(nome,codigo,nivel,titulo,carga,dep);
+        void AddDocenteSub(string nome, string nivel, string titulo, string dep, int carga){
+            Unesp->AddDocenteSub(nome,nivel,titulo,carga,dep);
         }
-        void AddTecnico(string nome, string codigo, string nivel, string funcao, string dep){
-            Unesp->AddTecnico(nome,codigo,nivel,funcao,dep);
+        void AddTecnico(string nome, string nivel, string funcao, string dep){
+            Unesp->AddTecnico(nome,nivel,funcao,dep);
         }
         string Geral(){
             return Unesp->Geral();

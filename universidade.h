@@ -1,5 +1,6 @@
 #pragma once
 #include "./database.h"
+#include <time.h>
 
 class Universidade{
 
@@ -13,22 +14,33 @@ class Universidade{
             database=new DataBase();
         }
         
-        void AddDepartamento(string nome, string codigo){
-            Departamento* departamento = new Departamento(nome, codigo);
+        string GeraCodigo(int n){
+            time_t bTime = time(NULL);
+            struct tm* aTime = localtime(&bTime);
+            int codigo = 100*(aTime->tm_year + 1900) + n;
+            return to_string(codigo);
+        }
+
+        void AddDepartamento(string Nome){
+            string codigo=GeraCodigo(database->NumeroDepartamentos()+1);
+            Departamento* departamento=new Departamento(Nome, codigo);
             database->AddDepartamento(departamento);
         }
 
-        void AddDocenteEfetivo(string nome, string codigo, string nivel, string titulo, string area, string departamento){
+        void AddDocenteEfetivo(string nome, string nivel, string titulo, string area, string departamento){
+            string codigo=GeraCodigo(database->NumeroFuncionarios()+1);
             DocenteEfetivo* docente = new DocenteEfetivo(area,codigo,nome,nivel,titulo);
             database->AddFuncionario(docente, departamento);
         }
 
-        void AddDocenteSub(string nome, string codigo, string nivel, string titulo, int cargaHoraria, string departamento){
+        void AddDocenteSub(string nome, string nivel, string titulo, int cargaHoraria, string departamento){
+            string codigo=GeraCodigo(database->NumeroFuncionarios()+1);
             DocenteSub* docente = new DocenteSub(cargaHoraria,codigo,nome,nivel,titulo);
             database->AddFuncionario(docente, departamento);
         }
 
-        void AddTecnico(string nome, string codigo, string nivel, string funcao, string departamento){
+        void AddTecnico(string nome, string nivel, string funcao, string departamento){
+            string codigo=GeraCodigo(database->NumeroFuncionarios()+1);
             Tecnico* tecnico = new Tecnico(codigo,nome,nivel,funcao);
             database->AddFuncionario(tecnico, departamento);
         }
