@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
+    /*
     // Inicializar pop-up de pesquisa
     QWidget popup_pesquisar;
     Ui::pesquisar p;
@@ -22,6 +23,7 @@ int main(int argc, char *argv[])
     Ui::resultados r;
     r.setupUi(&popup_resultados);
     popup_resultados.show();
+    */
 
     return a.exec();
 }
