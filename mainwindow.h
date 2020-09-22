@@ -3,7 +3,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "controler.h"
+//#include "controler.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
