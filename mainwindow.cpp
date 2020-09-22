@@ -1,7 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "pesquisar.h"
+#include "controler.h"
 #include "ui_pesquisar.h"
+
+controler* controle = new controler();
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -32,7 +36,7 @@ void MainWindow::on_insert_depart_clicked()
     std::string novo_departamento = (ui->line_depart->text()).toUtf8().constData();
     ui->line_depart->clear();
     ui->insert_depart->clearFocus();
-   // controle->AddDepartamento(novo_departamento);
+    controle->AddDepartamento(novo_departamento);
 }
 
 void MainWindow::on_insert_tecn_clicked()
@@ -41,7 +45,7 @@ void MainWindow::on_insert_tecn_clicked()
     std::string  novo_tecnico_funcao = (ui->line_tecn_func->text()).toUtf8().constData();
     std::string novo_tecnico_nivel = "T"+std::to_string(ui->line_tecn_nivel->value());
     std::string  novo_tecnico_departamento = (ui->line_tecn_depart->text()).toUtf8().constData();
-    //controle->AddTecnico(novo_tecnico_nome,novo_tecnico_nivel,novo_tecnico_funcao,novo_tecnico_departamento);
+    controle->AddTecnico(novo_tecnico_nome,novo_tecnico_nivel,novo_tecnico_funcao,novo_tecnico_departamento);
     ui->line_tecn_name->clear();
     ui->line_tecn_func->clear();
     ui->line_tecn_nivel->setValue(1);

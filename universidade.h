@@ -1,4 +1,5 @@
-#pragma once
+#ifndef UNIVERSIDADE_H
+#define UNIVERSIDADE_H
 #include "./database.h"
 #include <time.h>
 
@@ -208,3 +209,4 @@ class Universidade{
             return info;
         }
 };
+#endif

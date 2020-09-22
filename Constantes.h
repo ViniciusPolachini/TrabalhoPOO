@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CONSTANTES_H
+#define CONSTANTES_H
 #include <string>
 
 class Constantes{
@@ -11,5 +12,4 @@ class Constantes{
        }
     }
 };
-
-
+#endif
