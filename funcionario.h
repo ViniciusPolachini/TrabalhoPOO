@@ -146,7 +146,7 @@ class DocenteEfetivo : public Docente{
                         "\nNivel:"+nivel+
                         "\nSalario:"+salario+
                         "\nTitulo:"+Titulacao+
-                        "\nFunção:"+area;
+                        "\nArea:"+area;
             return Info;
         }
 
@@ -226,7 +226,7 @@ class DocenteSub : public Docente{
                         "\nNivel:"+nivel+
                         "\nSalario:"+salario+
                         "\nTitulo:"+Titulacao+
-                        "\nFunção:"+carga;
+                        "\nCarga:"+carga;
             return Info;
         }
 
