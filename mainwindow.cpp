@@ -29,9 +29,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_insert_depart_clicked()
 {
-    QString novo_departamento = (ui->line_depart->text()).toUtf8().constData();
+    std::string novo_departamento = (ui->line_depart->text()).toUtf8().constData();
     ui->line_depart->clear();
     ui->insert_depart->clearFocus();
+   // controle->AddDepartamento(novo_departamento);
 }
 
 void MainWindow::on_insert_tecn_clicked()

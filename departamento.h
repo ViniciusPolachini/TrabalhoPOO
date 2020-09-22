@@ -1,21 +1,19 @@
 #pragma once
-#include <iostream>
 #include <string>
-#include <memory>
 #include "./funcionario.h"
 #define MAX 50
 
 class Departamento{
     
     private:
-        string codigo, nome;
+        std::string codigo, nome;
         static int TotalFuncionarios;
         int NFuncionarios;
         Funcionario* funcionarios[MAX];
         
     public:
         Departamento(){}
-        Departamento(string _nome, string _codigo){
+        Departamento(std::string _nome, std::string _codigo){
             codigo=_codigo;
             nome=_nome;
             NFuncionarios=0;
@@ -41,26 +39,26 @@ class Departamento{
             return NFuncionarios;
         }
 
-        string getCodigo(){
+        std::string getCodigo(){
             return codigo;
         }
 
-        string getNome(){
+        std::string getNome(){
             return nome;
         }
 
-        void setCodigo(string _codigo){
+        void setCodigo(std::string _codigo){
             codigo=_codigo;
         }
 
-        void setNome(string _nome){
+        void setNome(std::string _nome){
             nome=_nome;
         }
 
-        string Informacoes(){
-            string NF = to_string(NFuncionarios);
-            string Gastos= to_string(calculaGastos());
-            string Info=    "\n\nNome:"+nome+
+        std::string Informacoes(){
+            std::string NF = std::to_string(NFuncionarios);
+            std::string Gastos= std::to_string(calculaGastos());
+            std::string Info="\n\nNome:"+nome+
                             "\nCódigo:"+codigo+
                             "\nNúmero de funcionarios:"+NF+
                             "\nGasto total:"+Gastos;

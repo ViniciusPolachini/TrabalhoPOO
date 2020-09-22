@@ -5,59 +5,59 @@
 class Universidade{
 
     private:
-        string nome;
+        std::string nome;
         DataBase* database;
         
     public:
-        Universidade(string _Nome){
+        Universidade(std::string _Nome){
             nome=_Nome;
             database=new DataBase();
         }
         
-        string GeraCodigo(int n){
+        std::string GeraCodigo(int n){
             time_t bTime = time(NULL);
             struct tm* aTime = localtime(&bTime);
             int codigo = 100*(aTime->tm_year + 1900) + n;
-            return to_string(codigo);
+            return std::to_string(codigo);
         }
 
         void setSalarioBase(double salario){
             database->setSalarioBase(salario);
         }
 
-        string getSalariosBase(){
-            return to_string(database->getSalarioBase());
+        std::string getSalariosBase(){
+            return std::to_string(database->getSalarioBase());
         }
 
-        void AddDepartamento(string Nome){
-            string codigo=GeraCodigo(database->NumeroDepartamentos()+1);
+        void AddDepartamento(std::string Nome){
+            std::string codigo=GeraCodigo(database->NumeroDepartamentos()+1);
             Departamento* departamento=new Departamento(Nome, codigo);
             database->AddDepartamento(departamento);
         }
 
-        void AddDocenteEfetivo(string nome, string nivel, string titulo, string area, string departamento){
-            string codigo=GeraCodigo(database->NumeroFuncionarios()+1);
+        void AddDocenteEfetivo(std::string nome, std::string nivel, std::string titulo, std::string area, std::string departamento){
+            std::string codigo=GeraCodigo(database->NumeroFuncionarios()+1);
             DocenteEfetivo* docente = new DocenteEfetivo(area,codigo,nome,nivel,titulo);
             database->AddFuncionario(docente, departamento);
         }
 
-        void AddDocenteSub(string nome, string nivel, string titulo, int cargaHoraria, string departamento){
-            string codigo=GeraCodigo(database->NumeroFuncionarios()+1);
+        void AddDocenteSub(std::string nome, std::string nivel, std::string titulo, int cargaHoraria, std::string departamento){
+            std::string codigo=GeraCodigo(database->NumeroFuncionarios()+1);
             DocenteSub* docente = new DocenteSub(cargaHoraria,codigo,nome,nivel,titulo);
             database->AddFuncionario(docente, departamento);
         }
 
-        void AddTecnico(string nome, string nivel, string funcao, string departamento){
-            string codigo=GeraCodigo(database->NumeroFuncionarios()+1);
+        void AddTecnico(std::string nome, std::string nivel, std::string funcao, std::string departamento){
+            std::string codigo=GeraCodigo(database->NumeroFuncionarios()+1);
             Tecnico* tecnico = new Tecnico(codigo,nome,nivel,funcao);
             database->AddFuncionario(tecnico, departamento);
         }
         
-        string Geral(){
+        std::string Geral(){
             Departamento** departamentos = database->Departamentos();
             int n=database->NumeroDepartamentos();
             double gastos=0;
-            string info="";
+            std::string info="";
             if(n==0) return "Não há departamentos registrados";
             Funcionario**  funcionario;
             for(int i=0; i<n; i++){
@@ -68,11 +68,11 @@ class Universidade{
                 if(n2==0) info+="Não há funcionarios";
                 else for(int j=0; j<n2; j++) info+="\n"+funcionario[j]->getNome();
             }
-            info+="\n\nGastos:"+to_string(gastos);
+            info+="\n\nGastos:"+std::to_string(gastos);
             return info;
         }
 
-        string InfoFuncionarioCodigo(string codigo){
+        std::string InfoFuncionarioCodigo(std::string codigo){
             Funcionario* funcionario = database->getFuncionarioCodigo(codigo);
             if(funcionario != nullptr){
                return funcionario->Informacoes();
@@ -82,7 +82,7 @@ class Universidade{
             }
         }
 
-        string InfoFuncionarioNome(string nome){
+        std::string InfoFuncionarioNome(std::string nome){
             Funcionario* funcionario = database->getFuncionarioNome(nome);
             if(funcionario != nullptr){
                 return funcionario->Informacoes();
@@ -92,7 +92,7 @@ class Universidade{
             }
         }
 
-        string InfoDepartamentoCodigo(string codigo){
+        std::string InfoDepartamentoCodigo(std::string codigo){
             Departamento* departamento = database->getDepartamentoCodigo(codigo);
             if(departamento != nullptr){
                return departamento->Informacoes();
@@ -102,7 +102,7 @@ class Universidade{
             }
         }
 
-        string InfoDepartamentoNome(string nome){
+        std::string InfoDepartamentoNome(std::string nome){
             Departamento* departamento = database->getDepartamentoNome(nome);
             if(departamento != nullptr){
                return departamento->Informacoes();
@@ -112,33 +112,33 @@ class Universidade{
             }
         }
 
-        string InfoDepartamentos(){
+        std::string InfoDepartamentos(){
             Departamento** departamentos= database->Departamentos();
             int n = database->NumeroDepartamentos();
             if(n==0) return "Não há departamentos registrado";
-            string info="";
+            std::string info="";
             for(int i=0; i<n; i++){
                 info+=departamentos[i]->Informacoes();
             }
             return info;
         }
 
-        string InfoFuncionarios(){
+        std::string InfoFuncionarios(){
             Funcionario** funcionarios= database->Funcionarios();
             int n = database->NumeroFuncionarios();
             if(n==0) return "Não há funcionarios registrado";
-            string info="";
+            std::string info="";
             for(int i=0; i<n; i++){
                 info+=funcionarios[i]->Informacoes();
             }
             return info;
         }
 
-        string InfoEfetivos(){
+        std::string InfoEfetivos(){
             Funcionario** funcionarios= (database->Funcionarios());
             int n = database->NumeroFuncionarios();
             if(n==0) return "Não há funcionarios registrados";
-            string info="";
+            std::string info="";
             for(int i=0; i<n; i++){
                 if(typeid(*funcionarios[i]).name()==typeid(DocenteEfetivo).name()) info+=funcionarios[i]->Informacoes();
             }
@@ -146,11 +146,11 @@ class Universidade{
             return info;
         }
 
-        string InfoSub(){
+        std::string InfoSub(){
             Funcionario** funcionarios= (database->Funcionarios());
             int n = database->NumeroFuncionarios();
             if(n==0) return "Não há funcionarios registrados";
-            string info="";
+            std::string info="";
             for(int i=0; i<n; i++){
                 if(typeid(*funcionarios[i]).name()==typeid(DocenteSub).name()) info+=funcionarios[i]->Informacoes();
             }
@@ -158,11 +158,11 @@ class Universidade{
             return info;
         }
 
-        string InfoDocentes(){
+        std::string InfoDocentes(){
             Funcionario** funcionarios= (database->Funcionarios());
             int n = database->NumeroFuncionarios();
             if(n==0) return "Não há funcionarios registrados";
-            string info="";
+            std::string info="";
             for(int i=0; i<n; i++){
                 if(typeid(*funcionarios[i]).name()!=typeid(Tecnico).name()) info+=funcionarios[i]->Informacoes();
             }
@@ -170,11 +170,11 @@ class Universidade{
             return info;
         }
 
-        string InfoTecnicos(){
+        std::string InfoTecnicos(){
             Funcionario** funcionarios= (database->Funcionarios());
             int n = database->NumeroFuncionarios();
             if(n==0) return "Não há funcionarios registrados";
-            string info="";
+            std::string info="";
             for(int i=0; i<n; i++){
                 if(typeid(*funcionarios[i]).name()==typeid(Tecnico).name()) info+=funcionarios[i]->Informacoes();
             }
@@ -182,11 +182,11 @@ class Universidade{
             return info;
         }
 
-        string DepartamentosEmFaixa(double min, double max){
+        std::string DepartamentosEmFaixa(double min, double max){
             Departamento** departamentos= database->Departamentos();
             int n = database->NumeroDepartamentos();
             if(n==0) return "Não há deparamentos registrado";
-            string info="";
+            std::string info="";
             for(int i=0; i<n; i++){
                 if(departamentos[i]->calculaGastos()<=max && departamentos[i]->calculaGastos()>=min)
                 info+=departamentos[i]->Informacoes();
@@ -195,11 +195,11 @@ class Universidade{
             return info;
         }
 
-        string FuncionariosEmFaixa(double min, double max){
+        std::string FuncionariosEmFaixa(double min, double max){
             Funcionario** funcionarios= database->Funcionarios();
             int n = database->NumeroDepartamentos();
             if(n==0) return "Não há funcionarios registrado";
-            string info="";
+            std::string info="";
             for(int i=0; i<n; i++){
                 if(funcionarios[i]->calculaSalario()<=max && funcionarios[i]->calculaSalario()>=min)
                 info+=funcionarios[i]->Informacoes();

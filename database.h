@@ -32,7 +32,7 @@ class DataBase{
             else delete(departamento);
         }
 
-        void AddFuncionario(Funcionario* funcionario, string dep){
+        void AddFuncionario(Funcionario* funcionario, std::string dep){
             if(contF<MAXF){
                 int i=0;
                 for(; i<contD; i++){
@@ -54,7 +54,7 @@ class DataBase{
             return funcionarios;
         }
 
-        Departamento* getDepartamentoCodigo(string codigo){
+        Departamento* getDepartamentoCodigo(std::string codigo){
             for(int i=0; i<contD; i++){
                 if(departamentos[i]->getCodigo()==codigo){
                     return departamentos[i];
@@ -63,7 +63,7 @@ class DataBase{
             return nullptr;
         }
 
-        Departamento* getDepartamentoNome(string nome){
+        Departamento* getDepartamentoNome(std::string nome){
             for(int i=0; i<contD; i++){
                 if(departamentos[i]->getNome()==nome){
                     return departamentos[i];
@@ -72,7 +72,7 @@ class DataBase{
             return nullptr;
         }
 
-        Funcionario* getFuncionarioCodigo(string codigo){
+        Funcionario* getFuncionarioCodigo(std::string codigo){
             for(int i=0; i<contF; i++){
                 if(funcionarios[i]->getCodigo()==codigo){
                     return funcionarios[i];
@@ -81,7 +81,7 @@ class DataBase{
             return nullptr;
         }
 
-        Funcionario* getFuncionarioNome(string nome){
+        Funcionario* getFuncionarioNome(std::string nome){
             for(int i=0; i<contF; i++){
                 if(funcionarios[i]->getNome()==nome){
                     return funcionarios[i];
