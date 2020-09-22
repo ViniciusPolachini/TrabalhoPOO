@@ -1,7 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "pesquisar.h"
+#include "controler.h"
 #include "ui_pesquisar.h"
+
+controler* controle = new controler();
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -32,7 +36,7 @@ void MainWindow::on_insert_depart_clicked()
     std::string novo_departamento = (ui->line_depart->text()).toUtf8().constData();
     ui->line_depart->clear();
     ui->insert_depart->clearFocus();
-   // controle->AddDepartamento(novo_departamento);
+    controle->AddDepartamento(novo_departamento);
 }
 
 void MainWindow::on_insert_tecn_clicked()

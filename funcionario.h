@@ -1,4 +1,5 @@
-#pragma once
+#ifndef FUNCIONARIO_H
+#define FUNCIONARIO_H
 #include <iostream>
 #include <string>
 #include <memory>
@@ -277,3 +278,4 @@ class DocenteSub : public Docente{
             salarioBase=_salario;
         }
 };
+#endif

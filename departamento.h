@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DEPARTAMENTO_H
+#define DEPARTAMENTO_H
 #include <string>
 #include "./funcionario.h"
 #define MAX 50
@@ -65,4 +66,4 @@ class Departamento{
             return Info;
         }
 };
-
+#endif
