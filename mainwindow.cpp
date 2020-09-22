@@ -3,6 +3,9 @@
 #include "pesquisar.h"
 #include "controler.h"
 #include "ui_pesquisar.h"
+#include <iostream>
+#include <fstream>
+using namespace std;
 
 controler* controle = new controler();
 
@@ -97,4 +100,60 @@ void MainWindow::on_pushButton_clicked()
 
     ui->line_atualizar_salario->setValue(0);
     ui->pushButton->clearFocus();
+}
+
+void MainWindow::on_actionRelatorio_Geral_triggered()
+{
+    ofstream myfile;
+    myfile.open("relatorio-geral.txt", ios::out | ios::trunc);
+    myfile << "Este é o relatório geral cavalo.";
+    myfile.close();
+}
+
+void MainWindow::on_actionRelatorio_dos_Departamentos_triggered()
+{
+    ofstream myfile;
+    myfile.open("relatorio-dos-departamentos.txt", ios::out | ios::trunc);
+    myfile << "Este é o relatório dos departamentos cavalo.";
+    myfile.close();
+}
+
+void MainWindow::on_actionRelatorio_dos_Funcion_rios_triggered()
+{
+    ofstream myfile;
+    myfile.open("relatorio-dos-funcionarios.txt", ios::out | ios::trunc);
+    myfile << "Este é o relatório dos funcionários cavalo.";
+    myfile.close();
+}
+
+void MainWindow::on_actionRelatorio_dos_T_cnicos_triggered()
+{
+    ofstream myfile;
+    myfile.open("relatorio-dos-tecnicos.txt", ios::out | ios::trunc);
+    myfile << "Este é o relatório dos técnicos cavalo.";
+    myfile.close();
+}
+
+void MainWindow::on_actionRelatorio_dos_Docentes_triggered()
+{
+    ofstream myfile;
+    myfile.open("relatorio-dos-docentes.txt", ios::out | ios::trunc);
+    myfile << "Este é o relatório dos docentes cavalo.";
+    myfile.close();
+}
+
+void MainWindow::on_actionRelatorio_dos_Docentes_Efetivos_triggered()
+{
+    ofstream myfile;
+    myfile.open("relatorio-dos-docentes-efetivos.txt", ios::out | ios::trunc);
+    myfile << "Este é o relatório dos docentes efetivos cavalo.";
+    myfile.close();
+}
+
+void MainWindow::on_actionRelatorio_dos_Docentes_Substitutos_triggered()
+{
+    ofstream myfile;
+    myfile.open("relatorio-dos-docentes-substitutos.txt", ios::out | ios::trunc);
+    myfile << "Este é o relatório dos docentes substitutos cavalo.";
+    myfile.close();
 }
