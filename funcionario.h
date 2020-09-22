@@ -56,7 +56,7 @@ class Tecnico : public Funcionario{
                         "\nCodigo:"+codigo+
                         "\nNivel:"+nivel+
                         "\nSalario:"+salario+
-                        "\nFunção:"+funcao;
+                        "\nFunção:"+funcao+"\n";
             return Info;
         }
 
@@ -146,7 +146,7 @@ class DocenteEfetivo : public Docente{
                         "\nNivel:"+nivel+
                         "\nSalario:"+salario+
                         "\nTitulo:"+Titulacao+
-                        "\nArea:"+area;
+                        "\nArea:"+area+"\n";
             return Info;
         }
 
@@ -220,13 +220,13 @@ class DocenteSub : public Docente{
 
         std::string Informacoes(){
             std::string salario = std::to_string(calculaSalario());
-            std::string carga = std::to_string(cargaHoraria);
+            std::string carga = std::to_string(cargaHoraria)+"h";
             std::string Info="\nNome:"+nome+
                         "\nCodigo:"+codigo+
                         "\nNivel:"+nivel+
                         "\nSalario:"+salario+
                         "\nTitulo:"+Titulacao+
-                        "\nCarga:"+carga;
+                        "\nCarga:"+carga+"\n";
             return Info;
         }
 
