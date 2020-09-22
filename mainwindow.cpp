@@ -29,18 +29,19 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_insert_depart_clicked()
 {
-    QString novo_departamento = (ui->line_depart->text()).toUtf8().constData();
+    std::string novo_departamento = (ui->line_depart->text()).toUtf8().constData();
     ui->line_depart->clear();
     ui->insert_depart->clearFocus();
+   // controle->AddDepartamento(novo_departamento);
 }
 
 void MainWindow::on_insert_tecn_clicked()
 {
-    QString novo_tecnico_nome = ui->line_tecn_name->text();
-    QString novo_tecnico_funcao = ui->line_tecn_func->text();
-    int novo_tecnico_nivel = ui->line_tecn_nivel->value();
-    QString novo_tecnico_departamento = ui->line_tecn_depart->text();
-
+    std::string  novo_tecnico_nome = (ui->line_tecn_name->text()).toUtf8().constData();
+    std::string  novo_tecnico_funcao = (ui->line_tecn_func->text()).toUtf8().constData();
+    std::string novo_tecnico_nivel = "T"+std::to_string(ui->line_tecn_nivel->value());
+    std::string  novo_tecnico_departamento = (ui->line_tecn_depart->text()).toUtf8().constData();
+    //controle->AddTecnico(novo_tecnico_nome,novo_tecnico_nivel,novo_tecnico_funcao,novo_tecnico_departamento);
     ui->line_tecn_name->clear();
     ui->line_tecn_func->clear();
     ui->line_tecn_nivel->setValue(1);

@@ -1,72 +1,71 @@
-#ifndef CONTROLER_H
-#define CONTROLER_H
+#pragma once
 #include "universidade.h"
 
 class controler{
     private:
         static Universidade* Unesp;
     public:
-        controler(){}
 
+        controler(){}
         void SetSalarioBase(double salario){
             Unesp->setSalarioBase(salario);
         }
-        void AddDepartamento(string nome){
+        void AddDepartamento(std::string nome){
             Unesp->AddDepartamento(nome);
         }
-        void AddDocenteEfetivo(string nome, string nivel, string titulo, string dep, string area){
+        void AddDocenteEfetivo(std::string nome, std::string nivel, std::string titulo, std::string dep, std::string area){
             Unesp->AddDocenteEfetivo(nome, nivel, titulo, area, dep);
         }
-        void AddDocenteSub(string nome, string nivel, string titulo, string dep, int carga){
+        void AddDocenteSub(std::string nome, std::string nivel, std::string titulo, std::string dep, int carga){
             Unesp->AddDocenteSub(nome,nivel,titulo,carga,dep);
         }
-        void AddTecnico(string nome, string nivel, string funcao, string dep){
+        void AddTecnico(std::string nome, std::string nivel, std::string funcao, std::string dep){
             Unesp->AddTecnico(nome,nivel,funcao,dep);
         }
-        string Geral(){
+        std::string Geral(){
             return Unesp->Geral();
         }
-        string Funcionarios(){
+        std::string Funcionarios(){
             return Unesp->InfoFuncionarios();
         }
-        string Tecnicos(){
+        std::string Tecnicos(){
             return Unesp->InfoTecnicos();
         }
-        string Subs(){
+        std::string Subs(){
             return Unesp->InfoSub();
         }
-        string Efetivos(){
+        std::string Efetivos(){
             return Unesp->InfoEfetivos();
         }
-        string Docentes(){
+        std::string Docentes(){
             return Unesp->InfoDocentes();
         }
-        string Departamentos(){
+        std::string Departamentos(){
             return Unesp->InfoDepartamentos();
         }
-        string DepartamentosEmFaixa(double min, double max){
+        std::string DepartamentosEmFaixa(double min, double max){
             return Unesp->DepartamentosEmFaixa(min, max);
         }
-        string FuncionariosEmFaixa(double min, double max){
+        std::string FuncionariosEmFaixa(double min, double max){
             return Unesp->FuncionariosEmFaixa(min, max);
         }
-        string FuncionarioCodigo(string codigo){
+        std::string FuncionarioCodigo(std::string codigo){
             return Unesp->InfoFuncionarioCodigo(codigo);
         }
-        string FuncionarioNome(string nome){
+        std::string FuncionarioNome(std::string nome){
             return Unesp->InfoFuncionarioNome(nome);
         }
-        string DepartamentoCodigo(string codigo){
+        std::string DepartamentoCodigo(std::string codigo){
             return Unesp->InfoDepartamentoCodigo(codigo);
         }
-        string DepartamentoNome(string nome){
+        std::string DepartamentoNome(std::string nome){
             return Unesp->InfoDepartamentoNome(nome);
         }
-        string getSalarioBase(){
+        std::string getSalarioBase(){
             return Unesp->getSalariosBase();
         }
 };
 
-Universidade* controler::Unesp=new Universidade("Unesp");
 
-#endif // CONTROLER_H
+Universidade* controler::Unesp = new Universidade("Unesp");
+

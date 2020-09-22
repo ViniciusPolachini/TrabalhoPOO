@@ -3,45 +3,42 @@
 #include <string>
 #include <memory>
 #include "Constantes.h"
-using namespace std;
 
 class Funcionario{
 
     protected:
-        string codigo, nome, nivel;
-        static double salarioBase;
-
+        std::string codigo, nome, nivel;
+         static double salarioBase;
     public:
         Funcionario(){}
-        Funcionario(string _codigo, string _nome){
+        Funcionario(std::string _codigo, std::string _nome){
             codigo=_codigo;
             nome=_nome;
         }
 
         virtual double calculaSalario()=0;
-        virtual string getCodigo()=0;
-        virtual string getNome()=0;
-        virtual string getNivel()=0;
+        virtual std::string getCodigo()=0;
+        virtual std::string getNome()=0;
+        virtual std::string getNivel()=0;
         virtual double getSalarioBase()=0;
-        virtual void setCodigo(string _codigo)=0;
-        virtual void setNome(string _nome)=0;
-        virtual void setNivel(string _nivel)=0;
+        virtual void setCodigo(std::string _codigo)=0;
+        virtual void setNome(std::string _nome)=0;
+        virtual void setNivel(std::string _nivel)=0;
         virtual void setSalarioBase(double _salario)=0;
-        virtual string Informacoes()=0;
+        virtual std::string Informacoes()=0;
 };
 
-double Funcionario::salarioBase = 0;
-
+double Funcionario::salarioBase = 100;
 
 class Tecnico : public Funcionario{
 
     private:
-        string funcao;
+        std::string funcao;
 
     public:
         ~Tecnico(){}
         Tecnico(){}
-        Tecnico(string _codigo, string _nome, string _nivel, string _funcao):
+        Tecnico(std::string _codigo, std::string _nome, std::string _nivel, std::string _funcao):
         Funcionario(_codigo, _nome){
             nivel=_nivel;
             funcao=_funcao;
@@ -52,9 +49,9 @@ class Tecnico : public Funcionario{
            return adicional+salarioBase;
         }
 
-        string Informacoes(){
-            string salario = to_string(calculaSalario());
-            string Info="\nNome:"+nome+
+        std::string Informacoes(){
+            std::string salario = std::to_string(calculaSalario());
+            std::string Info="\nNome:"+nome+
                         "\nCodigo:"+codigo+
                         "\nNivel:"+nivel+
                         "\nSalario:"+salario+
@@ -62,20 +59,20 @@ class Tecnico : public Funcionario{
             return Info;
         }
 
-        string getFuncao(){
+        std::string getFuncao(){
             return funcao;
         }
 
-        string getNome(){
+        std::string getNome(){
             return nome;
         }
 
 
-        string getCodigo(){
+        std::string getCodigo(){
             return codigo;
         }
 
-        string getNivel(){
+        std::string getNivel(){
             return nivel;
         }
 
@@ -83,15 +80,15 @@ class Tecnico : public Funcionario{
             return salarioBase;
         }
 
-        void setNome(string _nome){
+        void setNome(std::string _nome){
             nome=_nome;
         }
 
-        void setCodigo(string _codigo){
+        void setCodigo(std::string _codigo){
             codigo=_codigo;
         }
 
-        void setNivel(string _nivel){
+        void setNivel(std::string _nivel){
             nivel=_nivel;
         }
         
@@ -99,7 +96,7 @@ class Tecnico : public Funcionario{
             salarioBase=_salario;
         }
 
-        void setFuncao(string _funcao){
+        void setFuncao(std::string _funcao){
             funcao=_funcao;
         }
 };
@@ -108,29 +105,29 @@ class Tecnico : public Funcionario{
 class Docente : public Funcionario{
 
     protected:
-        string Titulacao;
+        std::string Titulacao;
 
     public:
-        Docente(string codigo, string nome, string _Titulacao):
+        Docente(std::string codigo, std::string nome, std::string _Titulacao):
         Funcionario(codigo, nome)
         {
             Titulacao=_Titulacao;
         }
 
-        virtual string getTitulacao()=0;
-        virtual void setTitulacao(string titulo)=0;
+        virtual std::string getTitulacao()=0;
+        virtual void setTitulacao(std::string titulo)=0;
 };
 
 
 class DocenteEfetivo : public Docente{
 
     private:
-        string area;
+        std::string area;
 
     public:
         ~DocenteEfetivo(){}
         
-        DocenteEfetivo(string _Area, string codigo, string nome, string _nivel, string titulacao):
+        DocenteEfetivo(std::string _Area, std::string codigo, std::string nome, std::string _nivel, std::string titulacao):
         Docente(codigo, nome, titulacao){
             area=_Area;
             nivel=_nivel;
@@ -141,9 +138,9 @@ class DocenteEfetivo : public Docente{
             return salarioBase+adicional;
         }
 
-        string Informacoes(){
-            string salario = to_string(calculaSalario());
-            string Info="\nNome:"+nome+
+        std::string Informacoes(){
+            std::string salario = std::to_string(calculaSalario());
+            std::string Info="\nNome:"+nome+
                         "\nCodigo:"+codigo+
                         "\nNivel:"+nivel+
                         "\nSalario:"+salario+
@@ -152,23 +149,23 @@ class DocenteEfetivo : public Docente{
             return Info;
         }
 
-        string getArea(){
+        std::string getArea(){
             return area;
         }
 
-        string getTitulacao(){
+        std::string getTitulacao(){
             return Titulacao;
         }
 
-        string getNome(){
+        std::string getNome(){
             return nome;
         }
 
-        string getCodigo(){
+        std::string getCodigo(){
             return codigo;
         }
 
-        string getNivel(){
+        std::string getNivel(){
             return nivel;
         }
 
@@ -176,23 +173,23 @@ class DocenteEfetivo : public Docente{
             return salarioBase;
         }
 
-        void setArea(string _area){
+        void setArea(std::string _area){
             area=_area;
         }
 
-        void setTitulacao(string _titulo){
+        void setTitulacao(std::string _titulo){
             Titulacao=_titulo;
         }
 
-        void setNome(string _nome){
+        void setNome(std::string _nome){
             nome=_nome;
         }
 
-        void setCodigo(string _codigo){
+        void setCodigo(std::string _codigo){
             codigo=_codigo;
         }
 
-        void setNivel(string _nivel){
+        void setNivel(std::string _nivel){
             nivel=_nivel;
         }
         
@@ -209,7 +206,7 @@ class DocenteSub : public Docente{
     public:
         ~DocenteSub(){}
 
-        DocenteSub(int _cargaHoraria, string codigo, string nome, string _nivel, string titulacao):
+        DocenteSub(int _cargaHoraria, std::string codigo, std::string nome, std::string _nivel, std::string titulacao):
         Docente(codigo, nome, titulacao){
                 cargaHoraria=_cargaHoraria;
                 nivel=_nivel;
@@ -220,10 +217,10 @@ class DocenteSub : public Docente{
             return salarioBase+adicional;
         }
 
-        string Informacoes(){
-            string salario = to_string(calculaSalario());
-            string carga = to_string(cargaHoraria);
-            string Info="\nNome:"+nome+
+        std::string Informacoes(){
+            std::string salario = std::to_string(calculaSalario());
+            std::string carga = std::to_string(cargaHoraria);
+            std::string Info="\nNome:"+nome+
                         "\nCodigo:"+codigo+
                         "\nNivel:"+nivel+
                         "\nSalario:"+salario+
@@ -236,19 +233,19 @@ class DocenteSub : public Docente{
             return cargaHoraria;
         }
 
-        string getTitulacao(){
+        std::string getTitulacao(){
             return Titulacao;
         }
 
-        string getNome(){
+        std::string getNome(){
             return nome;
         }
 
-        string getCodigo(){
+        std::string getCodigo(){
             return codigo;
         }
 
-        string getNivel(){
+        std::string getNivel(){
             return nivel;
         }
 
@@ -260,19 +257,19 @@ class DocenteSub : public Docente{
             cargaHoraria=_cargaHoraria;
         }
 
-        void setTitulacao(string _titulo){
+        void setTitulacao(std::string _titulo){
             Titulacao=_titulo;
         }
 
-        void setNome(string _nome){
+        void setNome(std::string _nome){
             nome=_nome;
         }
 
-        void setCodigo(string _codigo){
+        void setCodigo(std::string _codigo){
             codigo=_codigo;
         }
 
-        void setNivel(string _nivel){
+        void setNivel(std::string _nivel){
             nivel=_nivel;
         }
         
