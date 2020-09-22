@@ -29,6 +29,20 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_actionRelatorio_Geral_triggered();
+
+    void on_actionRelatorio_dos_Departamentos_triggered();
+
+    void on_actionRelatorio_dos_Funcion_rios_triggered();
+
+    void on_actionRelatorio_dos_T_cnicos_triggered();
+
+    void on_actionRelatorio_dos_Docentes_triggered();
+
+    void on_actionRelatorio_dos_Docentes_Efetivos_triggered();
+
+    void on_actionRelatorio_dos_Docentes_Substitutos_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
