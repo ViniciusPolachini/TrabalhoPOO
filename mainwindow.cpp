@@ -37,13 +37,12 @@ void MainWindow::on_insert_depart_clicked()
 
 void MainWindow::on_insert_tecn_clicked()
 {
-    std::string  novo_tecnico_nome = (ui->line_tecn_name->text()).toUtf8().constData();
-    std::string  novo_tecnico_funcao = (ui->line_tecn_func->text()).toUtf8().constData();
-    std::string novo_tecnico_nivel = "T"+std::to_string(ui->line_tecn_nivel->value());
-    std::string  novo_tecnico_departamento = (ui->line_tecn_depart->text()).toUtf8().constData();
-    //controle->AddTecnico(novo_tecnico_nome,novo_tecnico_nivel,novo_tecnico_funcao,novo_tecnico_departamento);
+    QString novo_tecnico_nome = ui->line_tecn_name->text();
+    QString novo_tecnico_funcao = ui->line_tecn_func->currentText();
+    int novo_tecnico_nivel = ui->line_tecn_nivel->value();
+    QString novo_tecnico_departamento = ui->line_tecn_depart->text();
+
     ui->line_tecn_name->clear();
-    ui->line_tecn_func->clear();
     ui->line_tecn_nivel->setValue(1);
     ui->line_tecn_depart->clear();
 
@@ -53,12 +52,12 @@ void MainWindow::on_insert_tecn_clicked()
 void MainWindow::on_insert_doc_ef_clicked()
 {
     QString novo_docente_ef_nome = ui->line_doc_ef_nome->text();
-    QString novo_docente_ef_titulo = ui->line_doc_ef_titulo->text();
+    QString novo_docente_ef_titulo = ui->line_doc_ef_titulo->currentText();
     int novo_docente_ef_nivel = ui->line_doc_ef_nivel->value();
     QString novo_docente_ef_departamento = ui->line_doc_ef_depart->text();
+    QString novo_docente_ef_area = ui->line_doc_ef_area->currentText();
 
     ui->line_doc_ef_nome->clear();
-    ui->line_doc_ef_titulo->clear();
     ui->line_doc_ef_nivel->setValue(1);
     ui->line_doc_ef_depart->clear();
 
@@ -68,12 +67,12 @@ void MainWindow::on_insert_doc_ef_clicked()
 void MainWindow::on_insert_doc_sub_clicked()
 {
     QString novo_docente_sub_nome = ui->line_doc_sub_nome->text();
-    QString novo_docente_sub_carga = ui->line_doc_sub_carga->text();
+    QString novo_docente_sub_carga = ui->line_doc_sub_carga->currentText();
     int novo_docente_sub_nivel = ui->line_doc_sub_nivel->value();
     QString novo_docente_sub_departamento = ui->line_doc_sub_depart->text();
+    QString novo_docente_sub_titulo = ui->line_doc_sub_titulo->currentText();
 
     ui->line_doc_sub_nome->clear();
-    ui->line_doc_sub_carga->clear();
     ui->line_doc_sub_nivel->setValue(1);
     ui->line_doc_sub_depart->clear();
 
@@ -90,6 +89,8 @@ void MainWindow::on_actionPesquisar_triggered()
 void MainWindow::on_pushButton_clicked()
 {
     double salario = ui->line_atualizar_salario->value();
-
     ui->line_salario_base->setValue(salario);
+
+    ui->line_atualizar_salario->setValue(0);
+    ui->pushButton->clearFocus();
 }
