@@ -74,7 +74,7 @@ void MainWindow::on_insert_doc_sub_clicked()
 {
     std::string novo_docente_sub_nome = (ui->line_doc_sub_nome->text().toUtf8().constData());
     std::string novo_docente_sub_carga = (ui->line_doc_sub_carga->currentText().toUtf8().constData());
-    novo_docente_sub_carga= novo_docente_sub_carga.substr(0,2);
+    novo_docente_sub_carga= novo_docente_sub_carga.substr(0,1);
     std::string novo_docente_sub_nivel = "S"+std::to_string(ui->line_doc_sub_nivel->value());
     std::string novo_docente_sub_departamento = (ui->line_doc_sub_depart->text().toUtf8().constData());
     std::string novo_docente_sub_titulo = (ui->line_doc_sub_titulo->currentText().toUtf8().constData());
