@@ -9,8 +9,9 @@ class Funcionario{
 
     protected:
         std::string codigo, nome, nivel;
-         static double salarioBase;
+
     public:
+        static double salarioBase;
         Funcionario(){}
         Funcionario(std::string _codigo, std::string _nome){
             codigo=_codigo;
@@ -29,7 +30,7 @@ class Funcionario{
         virtual std::string Informacoes()=0;
 };
 
-double Funcionario::salarioBase = 0;
+double Funcionario::salarioBase = 100;
 
 class Tecnico : public Funcionario{
 

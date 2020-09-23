@@ -6,7 +6,6 @@ class controler{
     private:
         static Universidade* Unesp;
     public:
-
         controler(){}
         void SetSalarioBase(double salario){
             Unesp->setSalarioBase(salario);
@@ -66,7 +65,5 @@ class controler{
             return Unesp->getSalariosBase();
         }
 };
-
-
 Universidade* controler::Unesp = new Universidade("Unesp");
 #endif

@@ -1,6 +1,5 @@
 #ifndef PESQUISAR_H
 #define PESQUISAR_H
-
 #include <QDialog>
 
 namespace Ui {
