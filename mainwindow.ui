@@ -308,7 +308,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="inserirdepartamento">
        <attribute name="title">
@@ -406,7 +406,7 @@
          </widget>
         </item>
         <item row="3" column="2">
-         <widget class="QLineEdit" name="line_tecn_depart"/>
+         <widget class="QComboBox" name="line_tecn_depart"/>
         </item>
        </layout>
       </widget>
@@ -415,14 +415,14 @@
         <string>Inserir Docente Efetivo</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_9">
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_11">
           <property name="text">
-           <string>Nome:</string>
+           <string>Titulação:</string>
           </property>
          </widget>
         </item>
-        <item row="4" column="1">
+        <item row="5" column="1">
          <widget class="QComboBox" name="line_doc_ef_area">
           <item>
            <property name="text">
@@ -446,47 +446,14 @@
           </item>
          </widget>
         </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="line_doc_ef_depart"/>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_11">
-          <property name="text">
-           <string>Titulação:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2" rowspan="7">
-         <widget class="QPushButton" name="insert_doc_ef">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>Inserir</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
+        <item row="5" column="0">
          <widget class="QLabel" name="label_17">
           <property name="text">
            <string>Área:</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_10">
-          <property name="text">
-           <string>Departamento:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="line_doc_ef_nome"/>
-        </item>
-        <item row="3" column="1">
+        <item row="4" column="1">
          <widget class="QComboBox" name="line_doc_ef_titulo">
           <item>
            <property name="text">
@@ -525,6 +492,39 @@
           </property>
          </widget>
         </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Nome:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="line_doc_ef_nome"/>
+        </item>
+        <item row="0" column="2" rowspan="8">
+         <widget class="QPushButton" name="insert_doc_ef">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Inserir</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QComboBox" name="line_doc_ef_depart"/>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>Departamento:</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="inserirdocsubstituto">
@@ -532,7 +532,14 @@
         <string>Inserir Docente Substituto</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="3" column="2">
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>Nível:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
          <widget class="QComboBox" name="line_doc_sub_titulo">
           <item>
            <property name="text">
@@ -561,41 +568,7 @@
           </item>
          </widget>
         </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_16">
-          <property name="text">
-           <string>Carga Horária:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_15">
-          <property name="text">
-           <string>Departamento:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QLineEdit" name="line_doc_sub_depart"/>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_14">
-          <property name="text">
-           <string>Nome:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <widget class="QLineEdit" name="line_doc_sub_nome"/>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_12">
-          <property name="text">
-           <string>Titulação:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3" rowspan="7">
+        <item row="0" column="3" rowspan="8">
          <widget class="QPushButton" name="insert_doc_sub">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
@@ -608,7 +581,17 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="2">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>Nome:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLineEdit" name="line_doc_sub_nome"/>
+        </item>
+        <item row="5" column="2">
          <widget class="QComboBox" name="line_doc_sub_carga">
           <item>
            <property name="text">
@@ -622,15 +605,32 @@
           </item>
          </widget>
         </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_16">
+          <property name="text">
+           <string>Carga Horária:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>Titulação:</string>
+          </property>
+         </widget>
+        </item>
         <item row="2" column="2">
          <widget class="QSpinBox" name="line_doc_sub_nivel"/>
         </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_13">
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_15">
           <property name="text">
-           <string>Nível:</string>
+           <string>Departamento:</string>
           </property>
          </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QComboBox" name="line_doc_sub_depart"/>
         </item>
        </layout>
       </widget>
@@ -846,14 +846,14 @@
   <tabstop>line_tecn_depart</tabstop>
   <tabstop>insert_tecn</tabstop>
   <tabstop>line_doc_ef_nome</tabstop>
-  <tabstop>line_doc_ef_depart</tabstop>
   <tabstop>line_doc_ef_nivel</tabstop>
+  <tabstop>line_doc_ef_depart</tabstop>
   <tabstop>line_doc_ef_titulo</tabstop>
   <tabstop>line_doc_ef_area</tabstop>
   <tabstop>insert_doc_ef</tabstop>
   <tabstop>line_doc_sub_nome</tabstop>
-  <tabstop>line_doc_sub_depart</tabstop>
   <tabstop>line_doc_sub_nivel</tabstop>
+  <tabstop>line_doc_sub_depart</tabstop>
   <tabstop>line_doc_sub_titulo</tabstop>
   <tabstop>line_doc_sub_carga</tabstop>
   <tabstop>insert_doc_sub</tabstop>
