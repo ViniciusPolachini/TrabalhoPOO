@@ -36,9 +36,13 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_insert_depart_clicked()
 {
-    std::string novo_departamento = (ui->line_depart->text()).toUtf8().constData();
+    QString novoDepartamento = ui->line_depart->text();
+    std::string novo_departamento = novoDepartamento.toUtf8().constData();
     ui->line_depart->clear();
     ui->insert_depart->clearFocus();
+    ui->line_tecn_depart->addItem(novoDepartamento);
+    ui->line_doc_ef_depart->addItem(novoDepartamento);
+    ui->line_doc_sub_depart->addItem(novoDepartamento);
     controle->AddDepartamento(novo_departamento);
 }
 
@@ -47,7 +51,7 @@ void MainWindow::on_insert_tecn_clicked()
     std::string novo_tecnico_nome = (ui->line_tecn_name->text().toUtf8().constData());
     std::string novo_tecnico_funcao = (ui->line_tecn_func->currentText().toUtf8().constData());
     std::string novo_tecnico_nivel = "T"+std::to_string(ui->line_tecn_nivel->value());
-    std::string novo_tecnico_departamento = (ui->line_tecn_depart->text().toUtf8().constData());
+    std::string novo_tecnico_departamento = (ui->line_tecn_depart->currentText().toUtf8().constData());
     controle->AddTecnico(novo_tecnico_nome,novo_tecnico_nivel,novo_tecnico_funcao,novo_tecnico_departamento);
     ui->line_tecn_name->clear();
     ui->line_tecn_nivel->setValue(1);
@@ -61,7 +65,7 @@ void MainWindow::on_insert_doc_ef_clicked()
     std::string novo_docente_ef_nome = (ui->line_doc_ef_nome->text().toUtf8().constData());
     std::string novo_docente_ef_titulo = (ui->line_doc_ef_titulo->currentText().toUtf8().constData());
     std::string novo_docente_ef_nivel = "D"+std::to_string(ui->line_doc_ef_nivel->value());
-    std::string novo_docente_ef_departamento = (ui->line_doc_ef_depart->text().toUtf8().constData());
+    std::string novo_docente_ef_departamento = (ui->line_doc_ef_depart->currentText().toUtf8().constData());
     std::string novo_docente_ef_area = (ui->line_doc_ef_area->currentText().toUtf8().constData());
     controle->AddDocenteEfetivo(novo_docente_ef_nome,novo_docente_ef_nivel,novo_docente_ef_titulo,novo_docente_ef_departamento,novo_docente_ef_area);
     ui->line_doc_ef_nome->clear();
@@ -76,7 +80,7 @@ void MainWindow::on_insert_doc_sub_clicked()
     std::string novo_docente_sub_carga = (ui->line_doc_sub_carga->currentText().toUtf8().constData());
     novo_docente_sub_carga= novo_docente_sub_carga.substr(0,2);
     std::string novo_docente_sub_nivel = "S"+std::to_string(ui->line_doc_sub_nivel->value());
-    std::string novo_docente_sub_departamento = (ui->line_doc_sub_depart->text().toUtf8().constData());
+    std::string novo_docente_sub_departamento = (ui->line_doc_sub_depart->currentText().toUtf8().constData());
     std::string novo_docente_sub_titulo = (ui->line_doc_sub_titulo->currentText().toUtf8().constData());
     int novo_docente_sub_carga_int = std::stoi(novo_docente_sub_carga);
     controle->AddDocenteSub(novo_docente_sub_nome,novo_docente_sub_nivel,novo_docente_sub_titulo,novo_docente_sub_departamento,novo_docente_sub_carga_int);
