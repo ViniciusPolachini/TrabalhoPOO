@@ -3,6 +3,8 @@
 #include "resultados.h"
 #include "ui_resultados.h"
 
+
+
 pesquisar::pesquisar(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::pesquisar)
@@ -19,6 +21,8 @@ void pesquisar::on_pesq_depart_nome_clicked()
 {
     ui->line_depart_nome->clear();
     ui->pesq_depart_nome->clearFocus();
+    std::string depart_nome = (ui->line_depart_nome->text()).toUtf8().constData();
+    std::string resultado = controle->DepartamentoNome(depart_nome);
     resultados j;
     j.exec();
 }
