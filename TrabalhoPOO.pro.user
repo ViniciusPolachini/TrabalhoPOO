@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.13.0, 2020-09-24T02:27:42. -->
-=======
-<!-- Written by QtCreator 4.13.0, 2020-09-23T21:09:53. -->
->>>>>>> 9471a0bebfd285e309b851bca359c0f46786e08a
+<!-- Written by QtCreator 4.13.0, 2020-09-24T18:08:42. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -79,9 +75,7 @@
     <value type="QString" key="ClangTools.DiagnosticConfig">Builtin.DefaultTidyAndClazy</value>
     <value type="int" key="ClangTools.ParallelJobs">2</value>
     <valuelist type="QVariantList" key="ClangTools.SelectedDirs"/>
-    <valuelist type="QVariantList" key="ClangTools.SelectedFiles">
-     <value type="QString">/home/viniciusp/Área de trabalho/TrabalhoPOO/pesquisar.cpp</value>
-    </valuelist>
+    <valuelist type="QVariantList" key="ClangTools.SelectedFiles"/>
     <valuelist type="QVariantList" key="ClangTools.SuppressedDiagnostics"/>
     <value type="bool" key="ClangTools.UseGlobalSettings">true</value>
    </valuemap>
