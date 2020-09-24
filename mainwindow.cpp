@@ -3,6 +3,7 @@
 #include "controler.h"
 #include <iostream>
 #include <fstream>
+#include <resultados.h>
 using namespace std;
 
 Universidade* controler::Unesp = new Universidade("Unesp");
@@ -33,12 +34,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->line_atualizar_salario->setMaximum(1000000);
     ui->line_salario_base->setMaximum(1000000);
-
-    /*
-    ui->table_depart->verticalHeader()->setVisible(false);
-    ui->table_func->verticalHeader()->setVisible(false);
-    ui->table_tecn->verticalHeader()->setVisible(false);
-    */
 }
 
 MainWindow::~MainWindow()
@@ -65,8 +60,10 @@ void MainWindow::on_insert_depart_clicked()
     Departamento* dep = controle->GetDepartamento(ui->table_depart->rowCount());
     ui->table_depart->setItem(tableDepartRowCount,0,new QTableWidgetItem(QString::fromStdString(dep->getCodigo())));
     ui->table_depart->setItem(tableDepartRowCount,1,new QTableWidgetItem(novoDepartamento));
-    ui->table_depart->setItem(tableDepartRowCount,2,new QTableWidgetItem(QString::fromStdString(std::to_string(dep->getNFuncionarios()))));
-    ui->table_depart->setItem(tableDepartRowCount,3,new QTableWidgetItem(QString::fromStdString(std::to_string(dep->calculaGastos()))));
+    ui->table_depart->setItem(tableDepartRowCount,2,new QTableWidgetItem("0"));
+    ui->table_depart->setItem(tableDepartRowCount,3,new QTableWidgetItem("0"));
+    //ui->table_depart->setItem(tableDepartRowCount,2,new QTableWidgetItem(QString::fromStdString(std::to_string(dep->getNFuncionarios()))));
+    //ui->table_depart->setItem(tableDepartRowCount,3,new QTableWidgetItem(QString::fromStdString(std::to_string(dep->calculaGastos()))));
     tableDepartRowCount++;
 }
 
@@ -86,8 +83,9 @@ void MainWindow::on_insert_tecn_clicked()
     //Limpar formulário
     ui->line_tecn_name->clear();
     ui->line_tecn_nivel->setValue(1);
-    ui->line_tecn_depart->clear();
     ui->insert_tecn->clearFocus();
+
+    //Atualizar Tabela de Departamentos
 
     //Atualizar Tabela de Funcionários
     ui->table_func->insertRow(tableFuncRowCount);
@@ -128,7 +126,6 @@ void MainWindow::on_insert_doc_ef_clicked()
     //Limpar Formulário
     ui->line_doc_ef_nome->clear();
     ui->line_doc_ef_nivel->setValue(1);
-    ui->line_doc_ef_depart->clear();
     ui->insert_doc_ef->clearFocus();
 
     //Atualizar Tabela de Funcionários
@@ -183,7 +180,6 @@ void MainWindow::on_insert_doc_sub_clicked()
     //Limpar Formulário
     ui->line_doc_sub_nome->clear();
     ui->line_doc_sub_nivel->setValue(1);
-    ui->line_doc_sub_depart->clear();
     ui->insert_doc_sub->clearFocus();
 
     //Atualizar Tabela de Funcionários
@@ -292,4 +288,7 @@ void MainWindow::on_button_pesquisar_clicked()
 
     ui->line_pesquisar->clear();
     ui->button_pesquisar->clearFocus();
+
+    Resultados j;
+    j.exec();
 }
