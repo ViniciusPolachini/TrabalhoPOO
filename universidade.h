@@ -208,5 +208,15 @@ class Universidade{
             if(info=="") return "Não há funcionarios nesta faixa de gastos";
             return info;
         }
+
+        Funcionario* GetFuncionario(int n){
+            Funcionario* funcionario = database->Funcionarios()[n-1];
+            return funcionario;
+        }
+        Departamento* GetDepartamento(int n){
+            Departamento* departamento = database->Departamentos()[n-1];
+            return departamento;
+        }
+
 };
 #endif

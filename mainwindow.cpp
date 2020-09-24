@@ -7,6 +7,7 @@
 #include <fstream>
 using namespace std;
 
+Universidade* controler::Unesp = new Universidade("Unesp");
 controler* controle = new controler();
 
 int tableDepartRowCount = 0;
@@ -20,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
 
     ui->line_tecn_nivel->setMinimum(1);
@@ -62,10 +64,11 @@ void MainWindow::on_insert_depart_clicked()
 
     //atualizar tabela de departamentos
     ui->table_depart->insertRow(tableDepartRowCount);
-    ui->table_depart->setItem(tableDepartRowCount,0,new QTableWidgetItem("ID aqui"));
+    Departamento* dep = controle->GetDepartamento(ui->table_depart->rowCount());
+    ui->table_depart->setItem(tableDepartRowCount,0,new QTableWidgetItem(QString::fromStdString(dep->getCodigo())));
     ui->table_depart->setItem(tableDepartRowCount,1,new QTableWidgetItem(novoDepartamento));
-    ui->table_depart->setItem(tableDepartRowCount,2,new QTableWidgetItem("N de func aqui"));
-    ui->table_depart->setItem(tableDepartRowCount,3,new QTableWidgetItem("Gasto aqui"));
+    ui->table_depart->setItem(tableDepartRowCount,2,new QTableWidgetItem(QString::fromStdString(std::to_string(dep->getNFuncionarios()))));
+    ui->table_depart->setItem(tableDepartRowCount,3,new QTableWidgetItem(QString::fromStdString(std::to_string(dep->calculaGastos()))));
     tableDepartRowCount++;
 }
 
@@ -90,19 +93,20 @@ void MainWindow::on_insert_tecn_clicked()
 
     //Atualizar Tabela de Funcionários
     ui->table_func->insertRow(tableFuncRowCount);
-    ui->table_func->setItem(tableFuncRowCount,0,new QTableWidgetItem("ID aqui"));
+    Funcionario* funcionario = controle->GetFuncionario(ui->table_func->rowCount());
+    ui->table_func->setItem(tableFuncRowCount,0,new QTableWidgetItem(QString::fromStdString(funcionario->getCodigo())));
     ui->table_func->setItem(tableFuncRowCount,1,new QTableWidgetItem(novoTecnicoNome));
-    ui->table_func->setItem(tableFuncRowCount,2,new QTableWidgetItem("Salario Aqui"));
+    ui->table_func->setItem(tableFuncRowCount,2,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
     ui->table_func->setItem(tableFuncRowCount,3,new QTableWidgetItem(novoTecnicoNivel));
     ui->table_func->setItem(tableFuncRowCount,4,new QTableWidgetItem(novoTecnicoDepart));
     tableFuncRowCount++;
 
     //Atualizar Tabela de Tecnicos
     ui->table_tecn->insertRow(tableTecnRowCount);
-    ui->table_tecn->setItem(tableTecnRowCount,0,new QTableWidgetItem("ID aqui"));
+    ui->table_tecn->setItem(tableTecnRowCount,0,new QTableWidgetItem(QString::fromStdString(funcionario->getCodigo())));
     ui->table_tecn->setItem(tableTecnRowCount,1,new QTableWidgetItem(novoTecnicoNome));
     ui->table_tecn->setItem(tableTecnRowCount,2,new QTableWidgetItem(novoTecnicoFunção));
-    ui->table_tecn->setItem(tableTecnRowCount,3,new QTableWidgetItem("Salario Aqui"));
+    ui->table_tecn->setItem(tableTecnRowCount,3,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
     ui->table_tecn->setItem(tableTecnRowCount,4,new QTableWidgetItem(novoTecnicoNivel));
     ui->table_tecn->setItem(tableTecnRowCount,5,new QTableWidgetItem(novoTecnicoDepart));
     tableTecnRowCount++;
@@ -131,30 +135,31 @@ void MainWindow::on_insert_doc_ef_clicked()
 
     //Atualizar Tabela de Funcionários
     ui->table_func->insertRow(tableFuncRowCount);
-    ui->table_func->setItem(tableFuncRowCount,0,new QTableWidgetItem("ID aqui"));
+    Funcionario* funcionario = controle->GetFuncionario(ui->table_func->rowCount());
+    ui->table_func->setItem(tableFuncRowCount,0,new QTableWidgetItem(QString::fromStdString(funcionario->getCodigo())));
     ui->table_func->setItem(tableFuncRowCount,1,new QTableWidgetItem(novoDocenteEfNome));
-    ui->table_func->setItem(tableFuncRowCount,2,new QTableWidgetItem("Salario Aqui"));
+    ui->table_func->setItem(tableFuncRowCount,2,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
     ui->table_func->setItem(tableFuncRowCount,3,new QTableWidgetItem(novoDocenteEfNivel));
     ui->table_func->setItem(tableFuncRowCount,4,new QTableWidgetItem(novoDocenteEfDepart));
     tableFuncRowCount++;
 
     //Atualizar Tabela de Docentes
     ui->table_doc->insertRow(tableDocRowCount);
-    ui->table_doc->setItem(tableDocRowCount,0,new QTableWidgetItem("Placeholder ID"));
+    ui->table_doc->setItem(tableDocRowCount,0,new QTableWidgetItem(QString::fromStdString(funcionario->getCodigo())));
     ui->table_doc->setItem(tableDocRowCount,1,new QTableWidgetItem(novoDocenteEfNome));
     ui->table_doc->setItem(tableDocRowCount,2,new QTableWidgetItem(novoDocenteEfTitulo));
-    ui->table_doc->setItem(tableDocRowCount,3,new QTableWidgetItem("Placeholder salario"));
+    ui->table_doc->setItem(tableDocRowCount,3,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
     ui->table_doc->setItem(tableDocRowCount,4,new QTableWidgetItem(novoDocenteEfNivel));
     ui->table_doc->setItem(tableDocRowCount,5,new QTableWidgetItem(novoDocenteEfDepart));
     tableDocRowCount++;
 
     //Atualizar Tabela de Docentes Efetivos
     ui->table_doc_ef->insertRow(tableDocEfRowCount);
-    ui->table_doc_ef->setItem(tableDocEfRowCount,0,new QTableWidgetItem("ID aqui"));
+    ui->table_doc_ef->setItem(tableDocEfRowCount,0,new QTableWidgetItem(QString::fromStdString(funcionario->getCodigo())));
     ui->table_doc_ef->setItem(tableDocEfRowCount,1,new QTableWidgetItem(novoDocenteEfNome));
     ui->table_doc_ef->setItem(tableDocEfRowCount,2,new QTableWidgetItem(novoDocenteEfTitulo));
     ui->table_doc_ef->setItem(tableDocEfRowCount,3,new QTableWidgetItem(novoDocenteEfArea));
-    ui->table_doc_ef->setItem(tableDocEfRowCount,4,new QTableWidgetItem("Salario Aqui"));
+    ui->table_doc_ef->setItem(tableDocEfRowCount,4,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
     ui->table_doc_ef->setItem(tableDocEfRowCount,5,new QTableWidgetItem(novoDocenteEfNivel));
     ui->table_doc_ef->setItem(tableDocEfRowCount,6,new QTableWidgetItem(novoDocenteEfDepart));
     tableDocEfRowCount++;
@@ -185,30 +190,31 @@ void MainWindow::on_insert_doc_sub_clicked()
 
     //Atualizar Tabela de Funcionários
     ui->table_func->insertRow(tableFuncRowCount);
-    ui->table_func->setItem(tableFuncRowCount,0,new QTableWidgetItem("ID aqui"));
+    Funcionario* funcionario = controle->GetFuncionario(ui->table_func->rowCount());
+    ui->table_func->setItem(tableFuncRowCount,0,new QTableWidgetItem(QString::fromStdString(funcionario->getCodigo())));
     ui->table_func->setItem(tableFuncRowCount,1,new QTableWidgetItem(novoDocenteSubNome));
-    ui->table_func->setItem(tableFuncRowCount,2,new QTableWidgetItem("Salario Aqui"));
-    ui->table_func->setItem(tableFuncRowCount,3,new QTableWidgetItem(novoDocenteSubNivel));
+    ui->table_func->setItem(tableFuncRowCount,2,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
+    ui->table_func->setItem(tableFuncRowCount,3,new QTableWidgetItem(QString::fromStdString(novo_docente_sub_nivel)));
     ui->table_func->setItem(tableFuncRowCount,4,new QTableWidgetItem(novoDocenteSubDepart));
     tableFuncRowCount++;
 
     //Atualizar Tabela de Docentes
     ui->table_doc->insertRow(tableDocRowCount);
-    ui->table_doc->setItem(tableDocRowCount,0,new QTableWidgetItem("Placeholder ID"));
+    ui->table_doc->setItem(tableDocRowCount,0,new QTableWidgetItem(QString::fromStdString(funcionario->getCodigo())));
     ui->table_doc->setItem(tableDocRowCount,1,new QTableWidgetItem(novoDocenteSubNome));
     ui->table_doc->setItem(tableDocRowCount,2,new QTableWidgetItem(novoDocenteSubTitulo));
-    ui->table_doc->setItem(tableDocRowCount,3,new QTableWidgetItem("Placeholder salario"));
+    ui->table_doc->setItem(tableDocRowCount,3,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
     ui->table_doc->setItem(tableDocRowCount,4,new QTableWidgetItem(novoDocenteSubNivel));
     ui->table_doc->setItem(tableDocRowCount,5,new QTableWidgetItem(novoDocenteSubDepart));
     tableDocRowCount++;
 
     //Atualizar Tabela de Docentes Substitutos
     ui->table_doc_sub->insertRow(tableDocSubRowCount);
-    ui->table_doc_sub->setItem(tableDocSubRowCount,0,new QTableWidgetItem("ID aqui"));
+    ui->table_doc_sub->setItem(tableDocSubRowCount,0,new QTableWidgetItem(QString::fromStdString(funcionario->getCodigo())));
     ui->table_doc_sub->setItem(tableDocSubRowCount,1,new QTableWidgetItem(novoDocenteSubNome));
     ui->table_doc_sub->setItem(tableDocSubRowCount,2,new QTableWidgetItem(novoDocenteSubTitulo));
-    ui->table_doc_sub->setItem(tableDocSubRowCount,3,new QTableWidgetItem("Carga Aqui"));
-    ui->table_doc_sub->setItem(tableDocSubRowCount,4,new QTableWidgetItem("Salario Aqui"));
+    ui->table_doc_sub->setItem(tableDocSubRowCount,3,new QTableWidgetItem(QString::fromStdString(novo_docente_sub_carga)));
+    ui->table_doc_sub->setItem(tableDocSubRowCount,4,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
     ui->table_doc_sub->setItem(tableDocSubRowCount,5,new QTableWidgetItem(novoDocenteSubNivel));
     ui->table_doc_sub->setItem(tableDocSubRowCount,6,new QTableWidgetItem(novoDocenteSubDepart));
     tableDocSubRowCount++;

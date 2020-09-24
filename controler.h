@@ -3,13 +3,16 @@
 #include "universidade.h"
 
 class controler{
-    private:
-        static Universidade* Unesp;
+
+
     public:
+        static Universidade* Unesp;
+
         controler(){}
         void SetSalarioBase(double salario){
             Unesp->setSalarioBase(salario);
         }
+
         void AddDepartamento(std::string nome){
             Unesp->AddDepartamento(nome);
         }
@@ -64,6 +67,13 @@ class controler{
         std::string getSalarioBase(){
             return Unesp->getSalariosBase();
         }
+
+        Funcionario* GetFuncionario(int n){
+            return Unesp->GetFuncionario(n);
+        }
+
+        Departamento* GetDepartamento(int n){
+            return Unesp->GetDepartamento(n);
+        }
 };
-Universidade* controler::Unesp = new Universidade("Unesp");
 #endif

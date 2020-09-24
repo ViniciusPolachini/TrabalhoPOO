@@ -30,7 +30,7 @@ class Funcionario{
         virtual std::string Informacoes()=0;
 };
 
-double Funcionario::salarioBase = 100;
+double Funcionario::salarioBase(100);
 
 class Tecnico : public Funcionario{
 

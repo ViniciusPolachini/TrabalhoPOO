@@ -3,7 +3,6 @@
 #include "resultados.h"
 #include "ui_resultados.h"
 
-
 pesquisar::pesquisar(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::pesquisar)
