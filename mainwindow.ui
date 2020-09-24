@@ -708,18 +708,14 @@
         <string>Pesquisar</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_6">
-        <item row="2" column="1">
-         <widget class="QLineEdit" name="line_pesquisar"/>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_21">
-          <property name="text">
-           <string>Pesquisa:</string>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_18">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>Nome ou ID</string>
           </property>
@@ -732,42 +728,41 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
-         <widget class="QComboBox" name="line_pesq_tipo">
-          <item>
-           <property name="text">
-            <string>Departamento</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Funcionário</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Técnico</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Docente</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Docente Efetivo</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Docente Substituto</string>
-           </property>
-          </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_21">
+          <property name="text">
+           <string>Pesquisa:</string>
+          </property>
          </widget>
         </item>
-        <item row="0" column="1">
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_20">
+          <property name="text">
+           <string>Por Salário:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QDoubleSpinBox" name="pesq_min_salario"/>
+        </item>
+        <item row="3" column="2">
+         <widget class="QDoubleSpinBox" name="pesq_max_salario"/>
+        </item>
+        <item row="3" column="3">
+         <widget class="QPushButton" name="pesquisa_salario">
+          <property name="text">
+           <string>Pesquisar</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
          <widget class="QComboBox" name="line_pesq_nome_id">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <item>
            <property name="text">
             <string>Nome</string>
@@ -780,10 +775,40 @@
           </item>
          </widget>
         </item>
-        <item row="0" column="2" rowspan="3">
+        <item row="1" column="1" colspan="2">
+         <widget class="QComboBox" name="line_pesq_tipo">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <item>
+           <property name="text">
+            <string>Departamento</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Funcionário</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QLineEdit" name="line_pesquisar">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3" rowspan="3">
          <widget class="QPushButton" name="button_pesquisar">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+           <sizepolicy hsizetype="Maximum" vsizetype="Ignored">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -805,7 +830,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuExportar_Relatorio">
@@ -894,6 +919,9 @@
   <tabstop>line_pesq_tipo</tabstop>
   <tabstop>line_pesquisar</tabstop>
   <tabstop>button_pesquisar</tabstop>
+  <tabstop>pesq_min_salario</tabstop>
+  <tabstop>pesq_max_salario</tabstop>
+  <tabstop>pesquisa_salario</tabstop>
  </tabstops>
  <resources/>
  <connections/>
