@@ -1,8 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "controler.h"
 #include <iostream>
 #include <fstream>
+#include "controler.h"
 #include <resultados.h>
 using namespace std;
 
@@ -282,13 +282,24 @@ void MainWindow::on_actionRelatorio_dos_Docentes_Substitutos_triggered()
 
 void MainWindow::on_button_pesquisar_clicked()
 {
-    QString textoDaPesquisa = ui->line_pesquisar->text();
+    string textoDaPesquisa = (ui->line_pesquisar->text()).toUtf8().constData();
     QString tipoDaPesquisa = ui->line_pesq_tipo->currentText();
     QString nomeIdPesquisa = ui->line_pesq_nome_id->currentText();
+    string Resultado=
+    !QString::compare(nomeIdPesquisa,"ID") ?(
+    !QString::compare(tipoDaPesquisa,"Departamento")  ?  controle->DepartamentoNome(textoDaPesquisa):(
+    !QString::compare(tipoDaPesquisa,"Funcionário")  ? controle->FuncionarioNome(textoDaPesquisa):"Ola"
+    ))
+    :(
+    !QString::compare(tipoDaPesquisa,"Departamento")  ?  controle->DepartamentoCodigo(textoDaPesquisa):(
+    !QString::compare(tipoDaPesquisa,"Funcionário")  ? controle->FuncionarioCodigo(textoDaPesquisa):"Ola"
+    ))
+    ;
 
     ui->line_pesquisar->clear();
     ui->button_pesquisar->clearFocus();
 
     Resultados j;
+    j.inseriTexto(QString::fromStdString(Resultado));
     j.exec();
 }

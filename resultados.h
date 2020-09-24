@@ -17,6 +17,9 @@ public:
 
 private:
     Ui::Resultados *ui;
+
+public slots:
+    void inseriTexto(QString texto);
 };
 
 #endif // RESULTADOS_H

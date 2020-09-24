@@ -8,6 +8,10 @@ Resultados::Resultados(QWidget *parent) :
     ui->setupUi(this);
 }
 
+void Resultados::inseriTexto(QString texto){
+    ui->textoResultado->setText(texto);
+}
+
 Resultados::~Resultados()
 {
     delete ui;

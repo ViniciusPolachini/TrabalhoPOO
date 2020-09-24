@@ -38,7 +38,7 @@ class DataBase{
             if(contF<MAXF){
                 int i=0;
                 for(; i<contD; i++){
-                    if((departamentos[i]->getNome()).compare(dep)){
+                    if((departamentos[i]->getNome())==(dep)){
                         funcionarios[contF]=funcionario;
                         contF++;    
                         departamentos[i]->AddFuncionario(funcionario);
