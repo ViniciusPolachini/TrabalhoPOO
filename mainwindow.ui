@@ -703,6 +703,98 @@
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Pesquisar</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="line_pesquisar"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_21">
+          <property name="text">
+           <string>Pesquisa:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_18">
+          <property name="text">
+           <string>Nome ou ID</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_19">
+          <property name="text">
+           <string>Pesquisar por:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="line_pesq_tipo">
+          <item>
+           <property name="text">
+            <string>Departamento</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Funcionário</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Técnico</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Docente</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Docente Efetivo</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Docente Substituto</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="line_pesq_nome_id">
+          <item>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="2" rowspan="3">
+         <widget class="QPushButton" name="button_pesquisar">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Pesquisar</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -716,12 +808,6 @@
      <height>30</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuArquivo">
-    <property name="title">
-     <string>Arquivo</string>
-    </property>
-    <addaction name="actionPesquisar"/>
-   </widget>
    <widget class="QMenu" name="menuExportar_Relatorio">
     <property name="title">
      <string>Exportar Relatório</string>
@@ -734,50 +820,9 @@
     <addaction name="actionRelatorio_dos_Docentes_Efetivos"/>
     <addaction name="actionRelatorio_dos_Docentes_Substitutos"/>
    </widget>
-   <addaction name="menuArquivo"/>
    <addaction name="menuExportar_Relatorio"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionPesquisar">
-   <property name="text">
-    <string>Pesquisar</string>
-   </property>
-  </action>
-  <action name="actionAbrir">
-   <property name="text">
-    <string>Abrir</string>
-   </property>
-  </action>
-  <action name="actionDepartamento">
-   <property name="text">
-    <string>Departamento</string>
-   </property>
-  </action>
-  <action name="actionFuncion_rio">
-   <property name="text">
-    <string>Funcionário</string>
-   </property>
-  </action>
-  <action name="actionT_cnico">
-   <property name="text">
-    <string>Técnico</string>
-   </property>
-  </action>
-  <action name="actionDocente_Efetivo">
-   <property name="text">
-    <string>Docente Efetivo</string>
-   </property>
-  </action>
-  <action name="actionDocente_Substituto">
-   <property name="text">
-    <string>Docente Substituto</string>
-   </property>
-  </action>
-  <action name="actionSair">
-   <property name="text">
-    <string>Sair</string>
-   </property>
-  </action>
   <action name="actionRelatorio_Geral">
    <property name="text">
     <string>Relatório Geral</string>
@@ -813,21 +858,6 @@
     <string>Relatório dos Docentes Substitutos</string>
    </property>
   </action>
-  <action name="actionSalvar_2">
-   <property name="text">
-    <string>Salvar</string>
-   </property>
-  </action>
-  <action name="actionAbrir_2">
-   <property name="text">
-    <string>Abrir</string>
-   </property>
-  </action>
-  <action name="actionFechar">
-   <property name="text">
-    <string>Sair</string>
-   </property>
-  </action>
  </widget>
  <tabstops>
   <tabstop>table_display</tabstop>
@@ -860,6 +890,10 @@
   <tabstop>line_salario_base</tabstop>
   <tabstop>line_atualizar_salario</tabstop>
   <tabstop>pushButton</tabstop>
+  <tabstop>line_pesq_nome_id</tabstop>
+  <tabstop>line_pesq_tipo</tabstop>
+  <tabstop>line_pesquisar</tabstop>
+  <tabstop>button_pesquisar</tabstop>
  </tabstops>
  <resources/>
  <connections/>

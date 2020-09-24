@@ -1,8 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "pesquisar.h"
 #include "controler.h"
-#include "ui_pesquisar.h"
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -215,12 +213,6 @@ void MainWindow::on_insert_doc_sub_clicked()
 }
 
 
-void MainWindow::on_actionPesquisar_triggered()
-{
-    pesquisar j;
-    j.exec();
-}
-
 void MainWindow::on_pushButton_clicked()
 {
     double salario = ui->line_atualizar_salario->value();
@@ -284,4 +276,14 @@ void MainWindow::on_actionRelatorio_dos_Docentes_Substitutos_triggered()
     myfile.open("relatorio-dos-docentes-substitutos.txt", ios::out | ios::trunc);
     myfile << controle->Subs();
     myfile.close();
+}
+
+void MainWindow::on_button_pesquisar_clicked()
+{
+    QString textoDaPesquisa = ui->line_pesquisar->text();
+    QString tipoDaPesquisa = ui->line_pesq_tipo->currentText();
+    QString nomeIdPesquisa = ui->line_pesq_nome_id->currentText();
+
+    ui->line_pesquisar->clear();
+    ui->button_pesquisar->clearFocus();
 }
