@@ -43,6 +43,8 @@ private slots:
 
     void on_button_pesquisar_clicked();
 
+    void on_pesquisa_salario_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

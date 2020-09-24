@@ -20,7 +20,6 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-
     ui->setupUi(this);
 
     ui->line_tecn_nivel->setMinimum(1);
@@ -34,6 +33,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->line_atualizar_salario->setMaximum(1000000);
     ui->line_salario_base->setMaximum(1000000);
+
+    ui->pesq_min_salario->setMaximum(1000000);
+    ui->pesq_max_salario->setMaximum(1000000);
 }
 
 MainWindow::~MainWindow()
@@ -299,6 +301,21 @@ void MainWindow::on_button_pesquisar_clicked()
     ui->line_pesquisar->clear();
     ui->button_pesquisar->clearFocus();
 
+    Resultados j;
+    j.inseriTexto(QString::fromStdString(Resultado));
+    j.exec();
+}
+
+void MainWindow::on_pesquisa_salario_clicked()
+{
+    ui->pesquisa_salario->clearFocus();
+    QString tipoDaPesquisa = ui->line_pesq_tipo->currentText();
+    double min = ui->pesq_min_salario->value();
+    double max = ui->pesq_max_salario->value();
+    string Resultado=
+    !QString::compare(tipoDaPesquisa,"Departamento") ? controle->DepartamentosEmFaixa(min,max):(
+    !QString::compare(tipoDaPesquisa,"Funcionário") ? controle->FuncionariosEmFaixa(min,max):"Erro"
+    );
     Resultados j;
     j.inseriTexto(QString::fromStdString(Resultado));
     j.exec();

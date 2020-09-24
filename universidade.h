@@ -187,9 +187,11 @@ class Universidade{
             Departamento** departamentos= database->Departamentos();
             int n = database->NumeroDepartamentos();
             if(n==0) return "Não há deparamentos registrado";
+            double valor;
             std::string info="";
             for(int i=0; i<n; i++){
-                if(departamentos[i]->calculaGastos()<=max && departamentos[i]->calculaGastos()>=min)
+                valor = departamentos[i]->calculaGastos();
+                if(valor<=max && valor>=min)
                 info+=departamentos[i]->Informacoes();
             }
             if(info=="") return "Não há departamentos nesta faixa de gastos";
@@ -198,11 +200,13 @@ class Universidade{
 
         std::string FuncionariosEmFaixa(double min, double max){
             Funcionario** funcionarios= database->Funcionarios();
-            int n = database->NumeroDepartamentos();
+            int n = database->NumeroFuncionarios();
             if(n==0) return "Não há funcionarios registrado";
             std::string info="";
+            double valor;
             for(int i=0; i<n; i++){
-                if(funcionarios[i]->calculaSalario()<=max && funcionarios[i]->calculaSalario()>=min)
+                valor=funcionarios[i]->calculaSalario();
+                if(valor<=max && valor>=min)
                 info+=funcionarios[i]->Informacoes();
             }
             if(info=="") return "Não há funcionarios nesta faixa de gastos";
