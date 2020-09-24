@@ -17,7 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    resultados.cpp
 
 HEADERS += \
     Constantes.h \
@@ -26,10 +27,12 @@ HEADERS += \
     departamento.h \
     funcionario.h \
     mainwindow.h \
+    resultados.h \
     universidade.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    resultados.ui
 
 TRANSLATIONS += \
     TrabalhoPOO_pt_BR.ts
