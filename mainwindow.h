@@ -25,8 +25,6 @@ private slots:
 
     void on_insert_doc_sub_clicked();
 
-    void on_actionPesquisar_triggered();
-
     void on_pushButton_clicked();
 
     void on_actionRelatorio_Geral_triggered();
@@ -42,6 +40,8 @@ private slots:
     void on_actionRelatorio_dos_Docentes_Efetivos_triggered();
 
     void on_actionRelatorio_dos_Docentes_Substitutos_triggered();
+
+    void on_button_pesquisar_clicked();
 
 private:
     Ui::MainWindow *ui;
