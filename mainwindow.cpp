@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QMessageBox>
 #include <iostream>
 #include <fstream>
 #include "controler.h"
@@ -50,23 +51,26 @@ void MainWindow::on_insert_depart_clicked()
     ui->line_depart->clear();
     ui->insert_depart->clearFocus();
 
-    controle->AddDepartamento(novo_departamento);
+    if(novo_departamento!=""){
+        controle->AddDepartamento(novo_departamento);
 
-    //Atualizar Campos de Inserir funcionários
-    ui->line_tecn_depart->addItem(novoDepartamento);
-    ui->line_doc_ef_depart->addItem(novoDepartamento);
-    ui->line_doc_sub_depart->addItem(novoDepartamento);
+        //Atualizar Campos de Inserir funcionários
+        ui->line_tecn_depart->addItem(novoDepartamento);
+        ui->line_doc_ef_depart->addItem(novoDepartamento);
+        ui->line_doc_sub_depart->addItem(novoDepartamento);
 
-    //atualizar tabela de departamentos
-    ui->table_depart->insertRow(tableDepartRowCount);
-    Departamento* dep = controle->GetDepartamento(ui->table_depart->rowCount());
-    ui->table_depart->setItem(tableDepartRowCount,0,new QTableWidgetItem(QString::fromStdString(dep->getCodigo())));
-    ui->table_depart->setItem(tableDepartRowCount,1,new QTableWidgetItem(novoDepartamento));
-    ui->table_depart->setItem(tableDepartRowCount,2,new QTableWidgetItem("0"));
-    ui->table_depart->setItem(tableDepartRowCount,3,new QTableWidgetItem("0"));
-    //ui->table_depart->setItem(tableDepartRowCount,2,new QTableWidgetItem(QString::fromStdString(std::to_string(dep->getNFuncionarios()))));
-    //ui->table_depart->setItem(tableDepartRowCount,3,new QTableWidgetItem(QString::fromStdString(std::to_string(dep->calculaGastos()))));
-    tableDepartRowCount++;
+        //atualizar tabela de departamentos
+        Departamento* dep = controle->GetDepartamento(ui->table_depart->rowCount());
+        ui->table_depart->insertRow(tableDepartRowCount);
+        ui->table_depart->setItem(tableDepartRowCount,0,new QTableWidgetItem(QString::fromStdString(dep->getCodigo())));
+        ui->table_depart->setItem(tableDepartRowCount,1,new QTableWidgetItem(novoDepartamento));
+        ui->table_depart->setItem(tableDepartRowCount,2,new QTableWidgetItem("0"));
+        ui->table_depart->setItem(tableDepartRowCount,3,new QTableWidgetItem("0"));
+       // ui->table_depart->setItem(tableDepartRowCount,2,new QTableWidgetItem(QString::fromStdString(std::to_string(dep->getNFuncionarios()))));
+        //ui->table_depart->setItem(tableDepartRowCount,3,new QTableWidgetItem(QString::fromStdString(std::to_string(dep->calculaGastos()))));
+        tableDepartRowCount++;
+    }
+    else QMessageBox::about(this,"ERRO","Campo não preenchido");
 }
 
 void MainWindow::on_insert_tecn_clicked()
@@ -80,6 +84,7 @@ void MainWindow::on_insert_tecn_clicked()
     std::string novo_tecnico_nivel = "T"+std::to_string(ui->line_tecn_nivel->value());
     std::string novo_tecnico_departamento = (ui->line_tecn_depart->currentText().toUtf8().constData());
 
+    if(novo_tecnico_nome!="" && novo_tecnico_departamento!=""){
     controle->AddTecnico(novo_tecnico_nome,novo_tecnico_nivel,novo_tecnico_funcao,novo_tecnico_departamento);
 
     //Limpar formulário
@@ -87,11 +92,10 @@ void MainWindow::on_insert_tecn_clicked()
     ui->line_tecn_nivel->setValue(1);
     ui->insert_tecn->clearFocus();
 
-    //Atualizar Tabela de Departamentos
 
     //Atualizar Tabela de Funcionários
-    ui->table_func->insertRow(tableFuncRowCount);
     Funcionario* funcionario = controle->GetFuncionario(ui->table_func->rowCount());
+    ui->table_func->insertRow(tableFuncRowCount);
     ui->table_func->setItem(tableFuncRowCount,0,new QTableWidgetItem(QString::fromStdString(funcionario->getCodigo())));
     ui->table_func->setItem(tableFuncRowCount,1,new QTableWidgetItem(novoTecnicoNome));
     ui->table_func->setItem(tableFuncRowCount,2,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
@@ -108,6 +112,11 @@ void MainWindow::on_insert_tecn_clicked()
     ui->table_tecn->setItem(tableTecnRowCount,4,new QTableWidgetItem(novoTecnicoNivel));
     ui->table_tecn->setItem(tableTecnRowCount,5,new QTableWidgetItem(novoTecnicoDepart));
     tableTecnRowCount++;
+    atualiza_gastos();
+    atualiza_nfuncionarios();
+    }
+    else if(novo_tecnico_departamento=="") QMessageBox::about(this,"ERRO","Adicione um departamento");
+    else QMessageBox::about(this,"ERRO","Preencha todos os campos");
 }
 
 void MainWindow::on_insert_doc_ef_clicked()
@@ -123,6 +132,7 @@ void MainWindow::on_insert_doc_ef_clicked()
     std::string novo_docente_ef_departamento = (ui->line_doc_ef_depart->currentText().toUtf8().constData());
     std::string novo_docente_ef_area = (ui->line_doc_ef_area->currentText().toUtf8().constData());
 
+    if(novo_docente_ef_nome!="" && novo_docente_ef_departamento!=""){
     controle->AddDocenteEfetivo(novo_docente_ef_nome,novo_docente_ef_nivel,novo_docente_ef_titulo,novo_docente_ef_departamento,novo_docente_ef_area);
 
     //Limpar Formulário
@@ -131,8 +141,8 @@ void MainWindow::on_insert_doc_ef_clicked()
     ui->insert_doc_ef->clearFocus();
 
     //Atualizar Tabela de Funcionários
-    ui->table_func->insertRow(tableFuncRowCount);
     Funcionario* funcionario = controle->GetFuncionario(ui->table_func->rowCount());
+    ui->table_func->insertRow(tableFuncRowCount);
     ui->table_func->setItem(tableFuncRowCount,0,new QTableWidgetItem(QString::fromStdString(funcionario->getCodigo())));
     ui->table_func->setItem(tableFuncRowCount,1,new QTableWidgetItem(novoDocenteEfNome));
     ui->table_func->setItem(tableFuncRowCount,2,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
@@ -160,6 +170,11 @@ void MainWindow::on_insert_doc_ef_clicked()
     ui->table_doc_ef->setItem(tableDocEfRowCount,5,new QTableWidgetItem(novoDocenteEfNivel));
     ui->table_doc_ef->setItem(tableDocEfRowCount,6,new QTableWidgetItem(novoDocenteEfDepart));
     tableDocEfRowCount++;
+    atualiza_gastos();
+    atualiza_nfuncionarios();
+    }
+    else if(novo_docente_ef_departamento=="") QMessageBox::about(this,"ERRO","Adicione um departamento");
+    else QMessageBox::about(this,"ERRO","Preencha todos os campos");
 }
 
 void MainWindow::on_insert_doc_sub_clicked()
@@ -177,6 +192,7 @@ void MainWindow::on_insert_doc_sub_clicked()
     std::string novo_docente_sub_titulo = (ui->line_doc_sub_titulo->currentText().toUtf8().constData());
     int novo_docente_sub_carga_int = std::stoi(novo_docente_sub_carga);
 
+    if(novo_docente_sub_nome!="" && novo_docente_sub_departamento!=""){
     controle->AddDocenteSub(novo_docente_sub_nome,novo_docente_sub_nivel,novo_docente_sub_titulo,novo_docente_sub_departamento,novo_docente_sub_carga_int);
 
     //Limpar Formulário
@@ -185,8 +201,8 @@ void MainWindow::on_insert_doc_sub_clicked()
     ui->insert_doc_sub->clearFocus();
 
     //Atualizar Tabela de Funcionários
-    ui->table_func->insertRow(tableFuncRowCount);
     Funcionario* funcionario = controle->GetFuncionario(ui->table_func->rowCount());
+    ui->table_func->insertRow(tableFuncRowCount);
     ui->table_func->setItem(tableFuncRowCount,0,new QTableWidgetItem(QString::fromStdString(funcionario->getCodigo())));
     ui->table_func->setItem(tableFuncRowCount,1,new QTableWidgetItem(novoDocenteSubNome));
     ui->table_func->setItem(tableFuncRowCount,2,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
@@ -200,7 +216,7 @@ void MainWindow::on_insert_doc_sub_clicked()
     ui->table_doc->setItem(tableDocRowCount,1,new QTableWidgetItem(novoDocenteSubNome));
     ui->table_doc->setItem(tableDocRowCount,2,new QTableWidgetItem(novoDocenteSubTitulo));
     ui->table_doc->setItem(tableDocRowCount,3,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
-    ui->table_doc->setItem(tableDocRowCount,4,new QTableWidgetItem(novoDocenteSubNivel));
+    ui->table_doc->setItem(tableDocRowCount,4,new QTableWidgetItem(QString::fromStdString(novo_docente_sub_nivel)));
     ui->table_doc->setItem(tableDocRowCount,5,new QTableWidgetItem(novoDocenteSubDepart));
     tableDocRowCount++;
 
@@ -211,9 +227,14 @@ void MainWindow::on_insert_doc_sub_clicked()
     ui->table_doc_sub->setItem(tableDocSubRowCount,2,new QTableWidgetItem(novoDocenteSubTitulo));
     ui->table_doc_sub->setItem(tableDocSubRowCount,3,new QTableWidgetItem(QString::fromStdString(novo_docente_sub_carga)));
     ui->table_doc_sub->setItem(tableDocSubRowCount,4,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
-    ui->table_doc_sub->setItem(tableDocSubRowCount,5,new QTableWidgetItem(novoDocenteSubNivel));
+    ui->table_doc_sub->setItem(tableDocSubRowCount,5,new QTableWidgetItem(QString::fromStdString(novo_docente_sub_nivel)));
     ui->table_doc_sub->setItem(tableDocSubRowCount,6,new QTableWidgetItem(novoDocenteSubDepart));
     tableDocSubRowCount++;
+    atualiza_gastos();
+    atualiza_nfuncionarios();
+    }
+    else if(novo_docente_sub_departamento=="") QMessageBox::about(this,"ERRO","Adicione um departamento");
+    else  QMessageBox::about(this,"ERRO","Preencha todos os campos");
 }
 
 
@@ -224,6 +245,7 @@ void MainWindow::on_pushButton_clicked()
     controle->SetSalarioBase(salario);
     ui->line_atualizar_salario->setValue(0);
     ui->pushButton->clearFocus();
+    atualiza_salarios();
 }
 
 void MainWindow::on_actionRelatorio_Geral_triggered()
@@ -289,12 +311,12 @@ void MainWindow::on_button_pesquisar_clicked()
     QString nomeIdPesquisa = ui->line_pesq_nome_id->currentText();
     string Resultado=
     !QString::compare(nomeIdPesquisa,"ID") ?(
-    !QString::compare(tipoDaPesquisa,"Departamento")  ?  controle->DepartamentoNome(textoDaPesquisa):(
-    !QString::compare(tipoDaPesquisa,"Funcionário")  ? controle->FuncionarioNome(textoDaPesquisa):"Ola"
-    ))
-    :(
     !QString::compare(tipoDaPesquisa,"Departamento")  ?  controle->DepartamentoCodigo(textoDaPesquisa):(
     !QString::compare(tipoDaPesquisa,"Funcionário")  ? controle->FuncionarioCodigo(textoDaPesquisa):"Ola"
+    ))
+    :(
+    !QString::compare(tipoDaPesquisa,"Departamento")  ?  controle->DepartamentoNome(textoDaPesquisa):(
+    !QString::compare(tipoDaPesquisa,"Funcionário")  ? controle->FuncionarioNome(textoDaPesquisa):"Ola"
     ))
     ;
 
@@ -320,3 +342,65 @@ void MainWindow::on_pesquisa_salario_clicked()
     j.inseriTexto(QString::fromStdString(Resultado));
     j.exec();
 }
+
+void MainWindow::atualiza_gastos(){
+    int n=ui->table_depart->rowCount();
+    Departamento* dep;
+    for(int i=0; i<n; i++){
+        dep=controle->GetDepartamento(i);
+        ui->table_depart->setItem(i,3,new QTableWidgetItem(QString::fromStdString(std::to_string(dep->calculaGastos()))));
+    }
+}
+
+void MainWindow::atualiza_nfuncionarios(){
+    int n=ui->table_depart->rowCount();
+    Departamento* dep;
+    for(int i=0; i<n; i++){
+        dep=controle->GetDepartamento(i);
+        ui->table_depart->setItem(i,2,new QTableWidgetItem(QString::fromStdString(std::to_string(dep->getNFuncionarios()))));
+    }
+}
+
+void MainWindow::atualiza_salarios(){
+    int NF,NT,NE,NS,ND;
+    NF=ui->table_func->rowCount();
+    NT=ui->table_tecn->rowCount();
+    NE=ui->table_doc_ef->rowCount();
+    NS=ui->table_doc_sub->rowCount();
+    ND=ui->table_doc->rowCount();
+    atualiza_gastos();
+    Funcionario* funcionario;
+    for(int i=0; i<NF;i++){
+        funcionario = controle->GetFuncionario(i);
+        ui->table_func->setItem(i,2,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
+        if(typeid(*funcionario).name()==typeid(Tecnico).name()){
+            for(int j=0; j<NT; j++){
+                if(!funcionario->getCodigo().compare(ui->table_tecn->item(j,0)->text().toUtf8())){
+                    ui->table_tecn->setItem(j,3,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
+                }
+            }
+        }
+        else{
+            for(int j=0;j<ND;j++){
+                if(!funcionario->getCodigo().compare(ui->table_doc->item(j,0)->text().toUtf8())){
+                    ui->table_doc->setItem(j,3,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
+                }
+            }
+            if(typeid(*funcionario).name()==typeid(DocenteEfetivo).name()){
+                for(int j=0;j<NE;j++){
+                    if(!funcionario->getCodigo().compare(ui->table_doc_ef->item(j,0)->text().toUtf8())){
+                        ui->table_doc_ef->setItem(j,4,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
+                    }
+                }
+            }
+            else{
+                for(int j=0;j<NE;j++){
+                    if(!funcionario->getCodigo().compare(ui->table_doc_sub->item(j,0)->text().toUtf8())){
+                    ui->table_doc_sub->setItem(j,4,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
+                }
+            }
+        }
+    }
+    }
+}
+

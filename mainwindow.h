@@ -17,6 +17,7 @@ public:
     ~MainWindow();
 
 private slots:
+
     void on_insert_tecn_clicked();
 
     void on_insert_depart_clicked();
@@ -47,5 +48,10 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+public slots:
+     void atualiza_salarios();
+     void atualiza_gastos();
+     void atualiza_nfuncionarios();
 };
 #endif // MAINWINDOW_H

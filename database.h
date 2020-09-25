@@ -19,7 +19,7 @@ class DataBase{
         }
         
         void setSalarioBase(double salario){
-            funcionarios[0]->setSalarioBase(salario);
+            Funcionario::salarioBase=salario;
         }
 
         double getSalarioBase(){
@@ -38,7 +38,7 @@ class DataBase{
             if(contF<MAXF){
                 int i=0;
                 for(; i<contD; i++){
-                    if((departamentos[i]->getNome())==(dep)){
+                    if((departamentos[i]->getNome()).compare(dep)==0){
                         funcionarios[contF]=funcionario;
                         contF++;    
                         departamentos[i]->AddFuncionario(funcionario);
@@ -58,7 +58,7 @@ class DataBase{
 
         Departamento* getDepartamentoCodigo(std::string codigo){
             for(int i=0; i<contD; i++){
-                if(departamentos[i]->getCodigo().compare(codigo)){
+                if(departamentos[i]->getCodigo().compare(codigo)==0){
                     return departamentos[i];
                 }
             }
@@ -67,7 +67,7 @@ class DataBase{
 
         Departamento* getDepartamentoNome(std::string nome){
             for(int i=0; i<contD; i++){
-                if((departamentos[i]->getNome()).compare(nome)){
+                if((departamentos[i]->getNome()).compare(nome)==0){
                     return departamentos[i];
                 }
             }
@@ -76,7 +76,7 @@ class DataBase{
 
         Funcionario* getFuncionarioCodigo(std::string codigo){
             for(int i=0; i<contF; i++){
-                if(funcionarios[i]->getCodigo().compare(codigo)){
+                if(funcionarios[i]->getCodigo().compare(codigo)==0){
                     return funcionarios[i];
                 }
             }
@@ -85,7 +85,7 @@ class DataBase{
 
         Funcionario* getFuncionarioNome(std::string nome){
             for(int i=0; i<contF; i++){
-                if(funcionarios[i]->getNome().compare(nome)){
+                if(funcionarios[i]->getNome().compare(nome)==0){
                     return funcionarios[i];
                 }
             }

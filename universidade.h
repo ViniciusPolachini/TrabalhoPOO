@@ -95,8 +95,15 @@ class Universidade{
 
         std::string InfoDepartamentoCodigo(std::string codigo){
             Departamento* departamento = database->getDepartamentoCodigo(codigo);
+            std::string info="";
             if(departamento != nullptr){
-               return departamento->Informacoes();
+                info+= departamento->Informacoes();
+                Funcionario** funcionarios = departamento->getFuncionarios();
+                info+="\n\n[FUNCIONARIOS]\n";
+                for(int i=0; i<departamento->getNFuncionarios();i++){
+                     info+=funcionarios[i]->getNome()+"\n";
+                }
+                return info;
             }
             else{
                 return "Registro Inexistente";
@@ -105,8 +112,15 @@ class Universidade{
 
         std::string InfoDepartamentoNome(std::string nome){
             Departamento* departamento = database->getDepartamentoNome(nome);
+            std::string info="";
             if(departamento != nullptr){
-               return departamento->Informacoes();
+               info+= departamento->Informacoes();
+               Funcionario** funcionarios = departamento->getFuncionarios();
+               info+="\n\n[FUNCIONARIOS]\n";
+               for(int i=0; i<departamento->getNFuncionarios();i++){
+                    info+=funcionarios[i]->getNome()+"\n";
+               }
+               return info;
             }
             else{
                 return "Registro Inexistente";
@@ -214,11 +228,11 @@ class Universidade{
         }
 
         Funcionario* GetFuncionario(int n){
-            Funcionario* funcionario = database->Funcionarios()[n-1];
+            Funcionario* funcionario = database->Funcionarios()[n];
             return funcionario;
         }
         Departamento* GetDepartamento(int n){
-            Departamento* departamento = database->Departamentos()[n-1];
+            Departamento* departamento = database->Departamentos()[n];
             return departamento;
         }
 
