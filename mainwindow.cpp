@@ -76,7 +76,7 @@ void MainWindow::on_insert_depart_clicked()
 void MainWindow::on_insert_tecn_clicked()
 {
     QString novoTecnicoNome = ui->line_tecn_name->text();
-    QString novoTecnicoFunção = ui->line_tecn_func->currentText();
+    QString novoTecnicoFuncao = ui->line_tecn_func->currentText();
     QString novoTecnicoNivel = "T"+QString::number(ui->line_tecn_nivel->value());
     QString novoTecnicoDepart = ui->line_tecn_depart->currentText();
     std::string novo_tecnico_nome = (ui->line_tecn_name->text().toUtf8().constData());
@@ -107,7 +107,7 @@ void MainWindow::on_insert_tecn_clicked()
     ui->table_tecn->insertRow(tableTecnRowCount);
     ui->table_tecn->setItem(tableTecnRowCount,0,new QTableWidgetItem(QString::fromStdString(funcionario->getCodigo())));
     ui->table_tecn->setItem(tableTecnRowCount,1,new QTableWidgetItem(novoTecnicoNome));
-    ui->table_tecn->setItem(tableTecnRowCount,2,new QTableWidgetItem(novoTecnicoFunção));
+    ui->table_tecn->setItem(tableTecnRowCount,2,new QTableWidgetItem(novoTecnicoFuncao));
     ui->table_tecn->setItem(tableTecnRowCount,3,new QTableWidgetItem(QString::fromStdString(std::to_string(funcionario->calculaSalario()))));
     ui->table_tecn->setItem(tableTecnRowCount,4,new QTableWidgetItem(novoTecnicoNivel));
     ui->table_tecn->setItem(tableTecnRowCount,5,new QTableWidgetItem(novoTecnicoDepart));
